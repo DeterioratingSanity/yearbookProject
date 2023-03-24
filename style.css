@@ -1,0 +1,217 @@
+/*
+
+  To those who may hereafter come,
+
+  I petition your forgiveness for
+  those travesties which persist herebelow: I am limited in time
+  and proficiency, and but hope my meager industry is sufficient for
+  your aims, whatsoever they might be.
+
+  I hope the High Tide yearbook persists in good care and condition,
+  and that you are yet as appreciated by the student body as I know you
+  to be as I type these few words.
+
+  Long live the Journalism Pathway.
+
+  Yours,
+  Wyatt Wilson, Cohort 2023
+
+  23.03.23
+
+*/
+body::-webkit-scrollbar {
+    display: none;
+}
+*{
+  margin: 0;
+  overflow-x: hidden;
+ }
+ .border{
+   overflow: hidden;
+ }
+.image{
+  width: 98.5vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: grayscale(100);
+  transition: 0.8s filter;
+}
+.right{
+  position: absolute;
+  top: 0;
+  right: -5px;
+  -webkit-clip-path: polygon(70% 0, 100% 0%, 100% 100%, 40% 100%);
+  clip-path: polygon(60% 0, 100% 0%, 100% 100%, 40% 100%);
+}
+.left{
+  position: absolute;
+  top: 0;
+  left: -5px;
+  -webkit-clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
+  clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
+}
+
+.right:hover{
+  filter: grayscale(0);
+  transition: 0.5s filter;
+}
+.left:hover{
+  filter: grayscale(0);
+  transition: 0.5s filter;
+}
+
+#one{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #ff6961;
+  box-sizing: border-box;
+
+  -webkit-clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
+  clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
+}
+#two{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #FDFD96;
+  box-sizing: border-box;
+
+  -webkit-clip-path: polygon(70% 0, 100% 0%, 100% 100%, 40% 100%);
+  clip-path: polygon(60% 0, 100% 0%, 100% 100%, 40% 100%);
+}
+#logo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height:261px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: white;
+}
+#logoImg{
+  height: 145px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+#circle {
+  position: absolute;
+  margin-left:2px;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width: 600px;
+  aspect-ratio: 1/1;
+  -webkit-clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
+  clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
+  overflow:hidden;
+
+  }
+
+#circle2 {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width: 600px;
+  aspect-ratio: 1/1;
+  -webkit-clip-path: polygon(70% 0, 100% 0%, 100% 100%, 40% 100%);
+  clip-path: polygon(60% 0, 100% 0%, 100% 100%, 40% 100%);
+  overflow:hidden;
+
+  }
+
+#circle text { font-family: 'Helvetica Neue', Arial; font-size: 16px; font-weight: bold; }
+
+#circle svg { position: absolute; left: 0; top: 0; width: 100%; height: 540px;
+
+  -webkit-animation-name: rotate;
+     -moz-animation-name: rotate;
+      -ms-animation-name: rotate;
+       -o-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-duration: 8s;
+     -moz-animation-duration: 8s;
+      -ms-animation-duration: 8s;
+       -o-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+       -o-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+       -o-animation-timing-function: linear;
+          animation-timing-function: linear;
+
+}
+
+#container{
+
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  height:600px;
+  width: 600px;
+  margin-top: 28px;
+  overflow:hidden;
+}
+
+#circle2 text { font-family: 'Helvetica Neue', Arial; font-size: 16px; font-weight: bold; }
+
+#circle2 svg { position: absolute; left: 0; top: 0; width: 100%; height: 540px;
+
+  -webkit-animation-name: rotate;
+     -moz-animation-name: rotate;
+      -ms-animation-name: rotate;
+       -o-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-duration: 8s;
+     -moz-animation-duration: 8s;
+      -ms-animation-duration: 8s;
+       -o-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+       -o-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+       -o-animation-timing-function: linear;
+          animation-timing-function: linear;
+
+}
+
+@-webkit-keyframes rotate {
+    from { -webkit-transform: rotate(360deg); }
+    to { -webkit-transform: rotate(0); }
+}
+@-moz-keyframes rotate {
+    from { -moz-transform: rotate(360deg); }
+    to { -moz-transform: rotate(0); }
+}
+@-ms-keyframes rotate {
+    from { -ms-transform: rotate(360deg); }
+    to { -ms-transform: rotate(0); }
+}
+@-o-keyframes rotate {
+    from { -o-transform: rotate(360deg); }
+    to { -o-transform: rotate(0); }
+}
+@keyframes rotate {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0); }
+}
