@@ -19,6 +19,23 @@
   23.03.23
 
 */
+
+
+/* Variables */
+
+:root{
+  --color-one: #ff6961; /* Primary Color for Yearbook Sect. Homepage */
+  --color-two: #FDFD96; /* Primary Color for Journalism Sect. Homepage */
+}
+
+/*
+
+
+GO BEYOND THIS POINT AT YOUR PERIL.
+
+
+*/
+
 body::-webkit-scrollbar {
     display: none;
 }
@@ -67,7 +84,7 @@ body::-webkit-scrollbar {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: #ff6961;
+  background: var(--color-one);
   box-sizing: border-box;
 
   -webkit-clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
@@ -79,7 +96,7 @@ body::-webkit-scrollbar {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: #FDFD96;
+  background: var(--color-two);
   box-sizing: border-box;
 
   -webkit-clip-path: polygon(70% 0, 100% 0%, 100% 100%, 40% 100%);
@@ -170,10 +187,10 @@ body::-webkit-scrollbar {
 }
 
 .headerOne{
-  fill: #ff6961;
+  fill: var(--color-one);
 }
 .headerTwo{
-  fill: #FDFD96;
+  fill: var(--color-two);
 }
 
 #circle2 text { font-family: 'Helvetica Neue', Arial; font-size: 16px; font-weight: bold; }
