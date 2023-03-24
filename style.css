@@ -193,7 +193,7 @@ body::-webkit-scrollbar {
   fill: var(--color-two);
 }
 
-.point-divider{
+.divider-form{
   font-size: 2em;
 }
 
