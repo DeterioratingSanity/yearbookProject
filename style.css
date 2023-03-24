@@ -193,6 +193,10 @@ body::-webkit-scrollbar {
   fill: var(--color-two);
 }
 
+.point-divider{
+  font-size: 2em;
+}
+
 #circle2 text { font-family: 'Helvetica Neue', Arial; font-size: 16px; font-weight: bold; }
 
 #circle2 svg { position: absolute; left: 0; top: 0; width: 100%; height: 540px;
