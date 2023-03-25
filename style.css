@@ -24,8 +24,18 @@
 /* Variables */
 
 :root{
+  /* Main Title Colors - L > R */
   --color-one: #ff6961; /* Primary Color for Yearbook Sect. Homepage */
   --color-two: #5E1916; /* Primary Color for Journalism Sect. Homepage */
+
+  /* These references tie to the left and right hero images for the home page; Only alter inside the quotation marks (" ") beginning from "https://" */
+  --yearbook-hero: url("https://media.istockphoto.com/id/1169127480/photo/media-interview-journalists-interviewing-politician-or-businessman.jpg?s=612x612&w=0&k=20&c=tWRq_W5F6uheEJyg7J4uhWw2cs8fJVxzaX44g9At8Q8=");
+  --journalism-hero: url("https://media.cntraveler.com/photos/5900bcac867df9167f358480/16:9/w_1280,c_limit/GettyImages-516978723.jpg");
+
+  /* This reference ties to the logo image. If changing it pushes it off-center, you may have to enter the danger zone.
+  Input "Ctrl + F" to search, input "--logo-hero" minus quotes. "top" and "left" with percentile values control UPPER
+  CORNER of the image (it is always a square) */
+  --logo-hero: url("https://www.svgrepo.com/show/25794/zoom.svg");
 }
 
 /*
@@ -57,6 +67,7 @@ body::-webkit-scrollbar {
   position: absolute;
   top: 0;
   right: -5px;
+  content: var(--yearbook-hero);
   -webkit-clip-path: polygon(70% 0, 100% 0%, 100% 100%, 40% 100%);
   clip-path: polygon(60% 0, 100% 0%, 100% 100%, 40% 100%);
 }
@@ -64,6 +75,7 @@ body::-webkit-scrollbar {
   position: absolute;
   top: 0;
   left: -5px;
+  content: var(--journalism-hero);
   -webkit-clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
   clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
 }
@@ -115,9 +127,10 @@ body::-webkit-scrollbar {
 #logoImg{
   height: 145px;
   position:absolute;
-  top:50%;
-  left:50%;
+  top:48.1%;
+  left:48.1%;
   transform: translate(-50%, -50%);
+  content: var(--logo-hero);
 }
 
 #circle {
