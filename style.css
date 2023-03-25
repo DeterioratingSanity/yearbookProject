@@ -121,6 +121,7 @@ body::-webkit-scrollbar {
 }
 
 #circle {
+  margin-top: 2px;
   position: absolute;
   margin-left:2px;
   top: 50%;
@@ -135,6 +136,7 @@ body::-webkit-scrollbar {
   }
 
 #circle2 {
+  margin-top: 2px;
   position: absolute;
   top:50%;
   left:50%;
@@ -193,9 +195,6 @@ body::-webkit-scrollbar {
   fill: var(--color-two);
 }
 
-.divider-form{
-  transform: scale(4);
-}
 
 #circle2 text { font-family: 'Helvetica Neue', Arial; font-size: 16px; font-weight: bold; }
 
