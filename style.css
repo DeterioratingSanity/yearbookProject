@@ -79,7 +79,7 @@
 *
 *
 *
-*  
+*
 *
 *
 *  Ok. I warned you. This is where it gets sketchy. Good luck. :D
@@ -119,7 +119,6 @@ body::-webkit-scrollbar {
   -webkit-clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
   clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
 }
-
 
 .right:hover{
   filter: grayscale(0);
