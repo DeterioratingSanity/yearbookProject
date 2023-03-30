@@ -341,11 +341,13 @@ html{
   border-radius: 50%;
   background:#FF7950;
   margin: 30px;
+  transition: 0.5s;
 }
 
 .active{
   background: #FF4C15;
-  transform: scale(1.05);
+  transform: scale(1.5);
+  transition: 0.5s;
 
 }
 #splitter{
