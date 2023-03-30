@@ -100,7 +100,7 @@ body::-webkit-scrollbar {
 }
 html{
 
-  scroll-behavior:smooth;
+  /*scroll-behavior:smooth;*/
 }
  .border{
    overflow: hidden;
