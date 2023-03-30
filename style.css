@@ -345,6 +345,7 @@ html{
 
 .active{
   background: #FF4C15;
+  transform: scale(1.05);
 
 }
 #splitter{
