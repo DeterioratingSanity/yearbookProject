@@ -10,14 +10,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"></script>
 </head>
 <body>
 
   <div id="nav">
     <div id="outset">
       <div id="inset">
-          <br>
-          <a class="key" href="#" id="navTitle"></a>
+          <br><a class="key small"></a><a class="key small"></a>
+          <a class="key" href="#title" id="navTitle"><img src="https://static.thenounproject.com/png/3574480-200.png"></a>
           <span id="splitter"></span>
           <a class="key" href="#oneE" id="navOne"></a>
           <a class="key" href="#twoE" id="navTwo"></a>
@@ -29,7 +31,7 @@
           <a class="key" href="#eight" id="navEight"></a>
           <a class="key" href="#nine" id="navNine"></a>
           <a class="key" href="#ten" id="navTen"></a>
-          <br>
+          <a class="key small"></a><a class="key small"></a><br>
 
       </div>
     </div>
@@ -47,6 +49,15 @@
 
 
   -->
+<div>
+  <div class="sect" id="titleSection">
+    <p class="sectTitle" id="title">Journalism</p>
+    <p class="content">
+      a
+    </p>
+  </div>
+</div>
+
 
    <div>
     <div class="sect" id="sectionOne">
@@ -422,156 +433,141 @@
 
         </p>
         </div></div>
-        <div style="height:18vh"></div>
+        <div style="height:39vh"></div>
 </body>
 <script>
 
   var controller = new ScrollMagic.Controller();
-/*
-      new ScrollMagic.Scene({triggerElement: "#title", duration:$("#title").height()})
+
+
+  var active = false;
+  $("#nav").mouseover(
+    function(){
+      active = true;
+    }
+  )
+
+      var sceneTitle = new ScrollMagic.Scene({triggerElement: "#titleSection", duration:$("#titleSection").height() - 5})
               .setClassToggle("#navTitle", "active")
               .addTo(controller);
-*/
-    	var sceneOne = new ScrollMagic.Scene({triggerElement: "#sectionOne", duration:$("#sectionOne").height(), triggerHook:0.05})
+                sceneTitle.on("enter", function(event){
+                titleScroll();
+              });
+
+    	var sceneOne = new ScrollMagic.Scene({triggerElement: "#sectionOne", duration:$("#sectionOne").height()})
     					.setClassToggle("#navOne", "active") // add class toggle
     					.addTo(controller);
-              sceneOne.on("enter", function (event) {
+                sceneOne.on("enter", function (event) {
                  oneScroll();
               });
 
-    	var sceneTwo = new ScrollMagic.Scene({triggerElement: "#sectionTwo", duration:$("#sectionTwo").height(), triggerHook:0.05})
+    	var sceneTwo = new ScrollMagic.Scene({triggerElement: "#sectionTwo", duration:$("#sectionTwo").height()})
     					.setClassToggle("#navTwo", "active") // add class toggle
     					.addTo(controller);
-              sceneTwo.on("enter", function (event) {
+                sceneTwo.on("enter", function (event) {
                  twoScroll();
               });
 
-    	var sceneThree = new ScrollMagic.Scene({triggerElement: "#sectionThree", duration:$("#sectionThree").height(), triggerHook:0.05})
+    	var sceneThree = new ScrollMagic.Scene({triggerElement: "#sectionThree", duration:$("#sectionThree").height()})
     					.setClassToggle("#navThree", "active") // add class toggle
     					.addTo(controller);
-              sceneThree.on("enter", function (event) {
+                sceneThree.on("enter", function (event) {
                  threeScroll();
               });
 
-    	var sceneFour = new ScrollMagic.Scene({triggerElement: "#sectionFour", duration:$("#sectionFour").height(), triggerHook:0.05})
+    	var sceneFour = new ScrollMagic.Scene({triggerElement: "#sectionFour", duration:$("#sectionFour").height()})
     					.setClassToggle("#navFour", "active") // add class toggle
     					.addTo(controller);
-              sceneFour.on("enter", function (event) {
+                sceneFour.on("enter", function (event) {
                  fourScroll();
               });
 
-      var sceneFive = new ScrollMagic.Scene({triggerElement: "#sectionFive", duration:$("#sectionFive").height(), triggerHook:0.05})
+      var sceneFive = new ScrollMagic.Scene({triggerElement: "#sectionFive", duration:$("#sectionFive").height()})
               .setClassToggle("#navFive", "active")
               .addTo(controller);
-              sceneFive.on("enter", function (event) {
+                sceneFive.on("enter", function (event) {
                  fiveScroll();
               });
 
-      var sceneSix = new ScrollMagic.Scene({triggerElement: "#sectionSix", duration:$("#sectionSix").height(), triggerHook:0.05})
+      var sceneSix = new ScrollMagic.Scene({triggerElement: "#sectionSix", duration:$("#sectionSix").height()})
               .setClassToggle("#navSix", "active")
               .addTo(controller);
-              sceneSix.on("enter", function (event) {
+                sceneSix.on("enter", function (event) {
                  sixScroll();
               });
 
-      var sceneSeven = new ScrollMagic.Scene({triggerElement: "#sectionSeven", duration:$("#sectionSeven").height(), triggerHook:0.05})
+      var sceneSeven = new ScrollMagic.Scene({triggerElement: "#sectionSeven", duration:$("#sectionSeven").height()})
               .setClassToggle("#navSeven", "active")
               .addTo(controller);
-              sceneSeven.on("enter", function (event) {
+                sceneSeven.on("enter", function (event) {
                  sevenScroll();
               });
 
-      var sceneEight = new ScrollMagic.Scene({triggerElement: "#sectionEight", duration:$("#sectionEight").height(), triggerHook:0.05})
+      var sceneEight = new ScrollMagic.Scene({triggerElement: "#sectionEight", duration:$("#sectionEight").height()})
               .setClassToggle("#navEight", "active")
               .addTo(controller);
-              sceneEight.on("enter", function (event) {
+                sceneEight.on("enter", function (event) {
                  eightScroll();
               });
 
-      var sceneNine = new ScrollMagic.Scene({triggerElement: "#sectionNine", duration:$("#sectionNine").height(), triggerHook:0.05})
+      var sceneNine = new ScrollMagic.Scene({triggerElement: "#sectionNine", duration:$("#sectionNine").height()})
               .setClassToggle("#navNine", "active")
               .addTo(controller);
-              sceneNine.on("enter", function (event) {
+                sceneNine.on("enter", function (event) {
                  nineScroll();
               });
 
-      var sceneTen = new ScrollMagic.Scene({triggerElement: "#sectionTen", duration:$("#sectionTen").height(), triggerHook:0.05})
+      var sceneTen = new ScrollMagic.Scene({triggerElement: "#sectionTen", duration:$("#sectionTen").height()})
               .setClassToggle("#navTen", "active")
               .addTo(controller);
-              sceneTen.on("enter", function (event) {
+                sceneTen.on("enter", function (event) {
                  tenScroll();
               });
 
+function scrollDist(dist){
+  $("#inset").delay(1000).scrollTo(dist, 200);
+}
 
-$("#navOne").click(function(){
-	$("#inset").scrollTop(100);
-})
+function titleScroll(){
+scrollDist(0);
+}
 function oneScroll(){
-	//$("#inset").scrollTop(100);
-  $("#inset").animate({scrollTop: "100"},150);
+	//$("#inset").scrollTopp(100);
+scrollDist(100);
 }
 
-$("#navTwo").click(function(){
-	$("#inset").scrollTop(162);
-})
 function twoScroll(){
-	
-  $("#inset").animate({scrollTop: "162"},150);
+scrollDist(162);
 }
 
-$("#navThree").click(function(){
-	$("#inset").scrollTop(224);
-})
 function threeScroll(){
-  $("#inset").animate({scrollTop: "224"},150);
+scrollDist(224);
 }
 
-$("#navFour").click(function(){
-	$("#inset").scrollTop(286);
-})
 function fourScroll(){
-  $("#inset").animate({scrollTop: "286"},150);
+scrollDist(286);
 }
 
-$("#navFive").click(function(){
-	$("#inset").scrollTop(348);
-})
 function fiveScroll(){
-  $("#inset").animate({scrollTop: "348"},150);
+scrollDist(348);
 }
 
-$("#navSix").click(function(){
-	$("#inset").scrollTop(410);
-})
 function sixScroll(){
-  $("#inset").animate({scrollTop: "410"},150);
+scrollDist(410);
 }
-
-$("#navSeven").click(function(){
-	$("#inset").scrollTop(472);
-})
 function sevenScroll(){
-  $("#inset").animate({scrollTop: "472"},150);
+scrollDist(472);
 }
 
-$("#navEight").click(function(){
-	$("#inset").scrollTop(534);
-})
-function Scroll(){
-  $("#inset").animate({scrollTop: "534"},150);
+function eightScroll(){
+scrollDist(534);
 }
 
-$("#navNine").click(function(){
-	$("#inset").scrollTop(596);
-})
 function nineScroll(){
-  $("#inset").animate({scrollTop: "596"},150);
+scrollDist(596);
 }
 
-$("#navTen").click(function(){
-	$("#inset").scrollTop(658);
-})
 function tenScroll(){
-  $("#inset").animate({scrollTop: "658"},150);
+scrollDist(658);
 }
 </script>

@@ -99,8 +99,7 @@ body::-webkit-scrollbar {
       display: none;
 }
 html{
-
-  /*scroll-behavior:smooth;*/
+  scroll-behavior:smooth;
 }
  .border{
    overflow: hidden;
@@ -332,7 +331,6 @@ html{
   overflow: scroll;
   max-height:40vh;
 }
-
 .key{
   content: '';
   display: block;
@@ -342,13 +340,30 @@ html{
   background:#FF7950;
   margin: 30px;
   transition: 0.5s;
+  position: relative;
+  z-index:1;
 }
 
 .active{
   background: #FF4C15;
   transform: scale(1.5);
   transition: 0.5s;
+}
 
+.key img{
+  opacity: 0;
+  width: 2em;
+  height: 2em;
+  position:absolute;
+  z-index:1000000;
+  transition: 0;
+}
+.key.active img{
+  opacity: 100;
+  transition: 2s;
+}
+.content{
+  min-height:120vh;
 }
 #splitter{
   content: '';
@@ -359,8 +374,10 @@ html{
   background:#FF7950;
   margin: auto;
 }
+.small{
+  transform:scale(.5);
+}
 .sect{
   height:auto;
   min-height:50vh;
-  padding-bottom:20vh;
 }
