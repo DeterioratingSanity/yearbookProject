@@ -379,13 +379,15 @@ html{
 .sect{
   height:auto;
   min-height:50vh;
+  width:90vw;
 }
-.flip-card {javascript:void(0);
+.flip-card {
   background-color: transparent;
-  width: 300px;
-  height: 300px;
+  width: 25vw;
+  height: 25vw;
   perspective: 1000px;
   overflow-x: visible;
+  margin: 20px;
 }
 
 .flip-card-inner {
