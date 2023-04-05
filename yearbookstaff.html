@@ -1,1 +1,700 @@
+<!-- on scroll incrementing is busted because it stalls out the other scroll func. -->
 
+<head>
+  <link rel="stylesheet" href="style.css">
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"></script>
+<style>
+  #sectionOne{
+    background: var(--gradient-17);
+    -webkit-mask: var(--mask-edge-zig-zag-vertical);
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  #oneWrapper{
+    background: var(--gradient-12);
+    -webkit-mask: var(--mask-edge-zig-zag-vertical);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: auto;
+  }
+</style>
+
+</head>
+<body>
+
+  <div id="nav">
+    <div id="outset">
+      <div id="inset">
+          <br><a class="key small"></a><a class="key small"></a>
+          <a class="key" href="#title" id="navTitle"><img src="https://static.thenounproject.com/png/3574480-200.png"></a>
+          <span id="splitter"></span>
+          <a class="key" href="#oneE" id="navOne"></a>
+          <a class="key" href="#twoE" id="navTwo"></a>
+          <a class="key" href="#three" id="navThree"></a>
+          <a class="key" href="#four" id="navFour"></a>
+          <a class="key" href="#five" id="navFive"></a>
+          <a class="key" href="#six" id="navSix"></a>
+          <a class="key" href="#seven" id="navSeven"></a>
+          <a class="key" href="#eight" id="navEight"></a>
+          <a class="key" href="#nine" id="navNine"></a>
+          <a class="key" href="#ten" id="navTen"></a>
+          <a class="key small"></a><a class="key small"></a><br>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!--
+
+
+
+
+
+
+
+
+
+  -->
+<div>
+  <div class="sect" id="titleSection">
+    <p class="sectTitle" id="title">Journalism</p>
+    <p class="content">
+      a
+    </p>
+  </div>
+</div>
+
+   <div id="oneWrapper">
+    <div class="sect" id="sectionOne" >
+        <p class="sectTitle" id="oneE">Bio</p>
+<div style="display:flex; flex-wrap: wrap; gap:30px;justify-content:center;
+width:90vw;">
+              <div class="flip-card" >
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar" style="width:20vw;height:20vw;">
+                    </div>
+                    <div class="flip-card-back">
+                      <div style="top:30%; transform: translateY(70%)">
+                      <h1>John Doe</h1>
+                      <p>Year</p><br>
+                      <p>General</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="flip-card" >
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar" style="width:20vw;height:20vw;">
+                    </div>
+                    <div class="flip-card-back">
+                      <div style="top:30%; transform: translateY(70%)">
+                      <h1>John Doe</h1>
+                      <p>Year</p><br>
+                      <p>General</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="flip-card" >
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar" style="width:20vw;height:20vw;">
+                    </div>
+                    <div class="flip-card-back">
+                      <div style="top:30%; transform: translateY(70%)">
+                      <h1>John Doe</h1>
+                      <p>Year</p><br>
+                      <p>General</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="flip-card" >
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar" style="width:20vw;height:20vw;">
+                    </div>
+                    <div class="flip-card-back">
+                      <div style="top:30%; transform: translateY(70%)">
+                      <h1>John Doe</h1>
+                      <p>Year</p><br>
+                      <p>General</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="flip-card" >
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar" style="width:20vw;height:20vw;">
+                    </div>
+                    <div class="flip-card-back">
+                      <div style="top:30%; transform: translateY(70%)">
+                      <h1>John Doe</h1>
+                      <p>Year</p><br>
+                      <p>General</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="flip-card" >
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar" style="width:20vw;height:20vw;">
+                    </div>
+                    <div class="flip-card-back">
+                      <div style="top:30%; transform: translateY(70%);">
+                      <h1>John Doe</h1>
+                      <p>Year</p><br>
+                      <p>General</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+  </div>
+              <!--
+
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar" style="width:300px;height:300px;">
+                      </div>
+                      <div class="flip-card-back">
+                        <h1>John Doe</h1><br>
+                        <p>Year</p>
+                        <p>General</p>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar" style="width:300px;height:300px;">
+                      </div>
+                      <div class="flip-card-back">
+                        <h1>John Doe</h1><br>
+                        <p>Year</p>
+                        <p>General</p>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar" style="width:300px;height:300px;">
+                      </div>
+                      <div class="flip-card-back">
+                        <h1>John Doe</h1><br>
+                        <p>Year</p>
+                        <p>General</p>
+                      </div>
+                    </div>
+                </div><br>
+
+              -->
+    </div>
+  </div>
+
+  <div>
+    <div class="sect" id="sectionTwo">
+        <p class="sectTitle" id="twoE">Ox Cart Man | Donald Hall</p>
+        <p class="content">
+          In October of the year,<br>
+          he counts potatoes dug from the brown field,   <br>
+          counting the seed, counting   <br>
+          the cellar’s portion out,<br>
+          and bags the rest on the cart’s floor.<br>
+          <br>
+          He packs wool sheared in April, honey<br>
+          in combs, linen, leather   <br>
+          tanned from deerhide,   <br>
+          and vinegar in a barrel<br>
+          hooped by hand at the forge’s fire.<br>
+          <br>
+          He walks by his ox’s head, ten days<br>
+          to Portsmouth Market, and sells potatoes,   <br>
+          and the bag that carried potatoes,<br>
+          flaxseed, birch brooms, maple sugar, goose   <br>
+          feathers, yarn.<br>
+          <br>
+          When the cart is empty he sells the cart.   <br>
+          When the cart is sold he sells the ox,  <br>
+          harness and yoke, and walks<br>
+          home, his pockets heavy<br>
+          with the year’s coin for salt and taxes,<br>
+          <br>
+          and at home by fire’s light in November cold   <br>
+          stitches new harness<br>
+          for next year’s ox in the barn,<br>
+          and carves the yoke, and saws planks   <br>
+          building the cart again.<br>
+
+        </p>
+    </div>
+  </div>
+<br>
+  <div>
+    <div class="sect" id="sectionThree">
+        <p class="sectTitle" id="three">Sentimental Moment | Robert Hershon</p>
+        <p class="content">
+          Don't fill up on bread<br>
+          I say absent-mindedly<br>
+          The servings here are huge<br>
+          <br>
+          My son, whose hair may be<br>
+          receding a bit, says<br>
+          Did you really just<br>
+          say that to me?<br>
+          <br>
+          What he doesn't know<br>
+          is that when we're walking<br>
+          together, when we get<br>
+          to the curb<br>
+          I sometimes start to reach<br>
+          for his hand<br>
+
+        </p>
+    </div>
+  </div>
+
+  <div>
+    <div class="sect" id="sectionFour">
+        <p class="sectTitle" id="four">The Revolt of the Turtles | <br>&emsp;Stephen Dunn</p>
+        <p class="content">
+          On gray forgetful mornings like this<br>
+          sea turtles would gather in the shallow waters<br>
+          of the Gulf to discuss issues of self-presentation<br>
+          and related concerns like, If there were a God<br>
+          would he have a hard shell and a retractable head,<br>
+          and whether speed on land<br>
+          was of any importance to a good swimmer.<br>
+          <br>
+          They knew that tourists needed to placate<br>
+          their children with catchy stories, and amuse<br>
+          themselves with various cruelties<br>
+          such as turning turtles over on their backs<br>
+          and watching their legs wriggle.<br>
+          So the turtles formed a committee to address<br>
+          <br>
+          How to Live Among People Who Among<br>
+          Other Atrocities Want to Turn You into Soup.<br>
+          <br>
+          The committee was also charged with wondering<br>
+          if God would mind a retelling of their lives,<br>
+          one in which sea turtles <br>
+          were responsible for all things<br>
+          right-minded and progressive, and men<br>
+          and women for poisoning the water.<br>
+          <br>
+          The oldest sea turtle among them knew<br>
+          that whoever was in control of the stories<br>
+          controlled all the shoulds and should-nots.<br>
+          But he wasn’t interested in punishment,<br>
+          only ways in which power could bring about<br>
+          fairness and decency. And when he finished speaking <br>
+          in the now-memorable and ever-deepening<br>
+          <br>
+          waters of the Gulf, all the sea turtles<br>
+          began to chant, Only fairness, only decency.<br>
+
+        </p>
+    </div>
+  </div>
+
+  <div>
+    <div class="sect" id="sectionFive">
+        <p class="sectTitle" id="five">On the Psychological Effect <br>&emsp; of Living with Houseplants | <br>&emsp; Stephanie Bishop</p>
+        <p class="content">
+          Not long ago I found myself in<br>
+          conversation with a group of people about<br>
+          the effect of living with houseplants. They<br>
+          were proselytising the health benefits and<br>
+          comparing Instagram shots on their<br>
+          phones, where everyone aspired to the<br>
+          same sparse white living room decorated<br>
+          with pops of green. I confessed however,<br>
+          that I couldn’t keep a houseplant alive—I<br>
+          couldn’t keep a houseplant alive to save<br>
+          my life, I think I said—and that despite my<br>
+          desire to do otherwise, this is one thing<br>
+          that I routinely fail at. I say to my husband,<br>
+          ‘Look, it is dying,’ and he says, ‘That’s<br>
+          because it just needs water.’ Even though I<br>
+          know this, even though he has told me, I<br>
+          still do not water it. Instead, some small<br>
+          voice in me insists that the plant has it in<br>
+          itself to survive a little longer. My husband<br>
+          takes pity on the limp leaves, he worries<br>
+          about them, and waters the plant with care<br>
+          from a special can with a long narrow<br>
+          spout that allows him to direct the water<br>
+          with great precision, at the very base of<br>
+          the plant where the pale stem descends<br>
+          into the pot of soil. I am grateful that he<br>
+          does this because I cannot, because the<br>
+          thoughts I direct to the plant are the same<br>
+          thoughts I direct to myself, which are the<br>
+          thoughts, I realise, that my mother<br>
+          directed to me: You don’t need to eat yet,<br>
+          You can’t possibly still be thirsty, How can<br>
+          you be tired already? Surely you can do<br>
+          better than that. Both my husband and I<br>
+          humanise our houseplants, we<br>
+          anthropomorphise them, and because of<br>
+          this I look at the living plant and think it<br>
+          should make its livingness go a little<br>
+          further, stretch it out, test it, live harder<br>
+          on less, strive to be upright, and each time<br>
+          I do this I feel myself dehumanised, little<br>
+          by little more. I would like not to be this<br>
+          kind of person, this person who refuses to<br>
+          give water when water is so clearly needed.<br>
+          But it runs in the family, this failure to<br>
+          keep houseplants alive. My mother cannot<br>
+          do it either, and now I wonder how her<br>
+          mother spoke to her, which might have<br>
+          been the same but could have been<br>
+          different or perhaps it was just split<br>
+          somehow because I remember my<br>
+          grandmother tending a patio of brilliantly<br>
+          flowering impatiens, red and orange and<br>
+          hot pink, and on her coffee table there was<br>
+          always a vase of deeply perfumed roses<br>
+          that she had grown herself. Perhaps she<br>
+          told her daughter, my mother, to hurry on<br>
+          now and not bother her and sort her<br>
+          livingness out on her own because she had<br>
+          houseplants to water.<br>
+
+        </p>
+    </div>
+  </div>
+
+  <div>
+    <div class="sect" id="sectionSix">
+        <p class="sectTitle" id="six">Simplicity | Sandra Gilbert</p>
+        <p class="content">
+          Wishing to praise<br>
+          the simple, the univocal, the one<br>
+          word that falls like a ripe fruit<br>
+          into an infinite well,<br>
+          I watch<br>
+          <br>
+          that easy old couple, limber<br>
+          sixty-year-olds,<br>
+          strolling, maybe just finished jogging,<br>
+          under the plum trees.<br>
+          Over their mild<br>
+          <br>
+          gray heads the air<br>
+          is pink with blossoms<br>
+          accomplishing themselves;<br>
+          under their tan, accomplished Keds<br>
+          the sidewalk’s pink with petals.<br>
+          <br>
+          She turns to him and speaks, a word<br>
+          that fills and falls like another petal,<br>
+          easy, simple:<br>
+          a word of thirst?—milk? wine?—<br>
+          a word of love?—good run?—<br>
+          <br>
+          whatever,<br>
+          it befalls him<br>
+          light as the stroke of a branch,<br>
+          clear as color,<br>
+          and he nods, smiles.<br>
+          <br>
+          I want to learn that word, I want<br>
+          to hold that word under my tongue<br>
+          like a sip of milk,<br>
+          I want to inhale that word<br>
+          the way that gray-haired woman, now,<br>
+          <br>
+          turns back to the tree<br>
+          and inhales the lucid perfume<br>
+          of a blossom that promises<br>
+          ripeness, night, the sweetness<br>
+          of the plum.<br>
+
+        </p>
+    </div>
+  </div>
+
+  <div>
+    <div class="sect" id="sectionSeven">
+        <p class="sectTitle" id="seven">The Valley Harvest | H. L. Davis</p>
+        <p class="content">
+          Honey in the horn! I brought my horse from the water<br>
+          And from the white grove of tall alders over the spring,<br>
+          And brought him past a row of high hollyhocks<br>
+          Which flew and tore their flowers thin as his mane.<br>
+          <br>
+          And women there watched, with hair blown over their mouths;<br>
+          Yet in watching the oat field they were quiet as the spring<br>.
+          <br>
+          “Are the hollyhocks full bloomed? It is harvest then.<br>
+          The hay falls like sand falling in a high wind<br>
+          When the weeds blow and fly—but steady the sand falls.<br>
+          It is harvest, harvest, and honey in the horn.<br>
+          I would like to go out, in a few days, through the stubble field,<br>
+          And to all the springs—yours too we have known for years—<br>
+          And to the bearing vines, and clean the berries from them.”<br>
+          <br>
+          Call, women!—why do you stand if not for your pride’s sake?<br>
+          <br>
+          But the women would neither call to me nor speak,<br>
+          Nor to any man not mowing during their harvest.<br>
+          They watched with their hair blowing, near the stalks,<br>
+          In the row of red hollyhocks<br>
+          <br>
+          Quiet as the spring.<br>
+          What is by the spring? A bird, and a few old leaves.<br>
+
+        </p>
+    </div>
+  </div>
+
+  <div>
+    <div class="sect" id="sectionEight">
+        <p class="sectTitle" id="eight">Workmen | Herbert Morris</p>
+        <p class="content">
+          Five workmen hired to shovel dirt<br>
+          have passed among them some milk-bottle of<br>
+          cool water which I felt flowed more like love,<br>
+          a drinking whose raw beauty fully hurt.<br>
+          <br>
+          Each mouth touched where the other four had been:<br>
+          that of itself spoke such humanity<br>
+          as to have made it inescapably<br>
+          devotions of my own I struggled in.<br>
+          <br>
+          Imagine that pure structure on the day<br>
+          as lemons on a beach, a house of sand,<br>
+          a coolness in the desert that one’s hand<br>
+          beautifully caused to blossom from decay.<br>
+          <br>
+          That was the way, that was the wealth of way<br>
+          they spent and went in water man to man,<br>
+          common and strong and world to understand.<br>
+          That was their way, and this is what we pay<br>
+          <br>
+          in learning understanding from those five:<br>
+          envy that summer touches them to thirst<br>
+          for gifts of back-lot water, and this first<br>
+          sheer pain that drinking means to be alive.<br>
+
+        </p>
+    </div>
+  </div>
+
+  <div >
+    <div class="sect"id="sectionNine">
+        <p class="sectTitle" id="nine">Italian Sampler | May Swenson</p>
+        <p class="content">
+          Lombardy, Tuscany, Umbria, Calabria.<br>
+          A spear of leaves. A pear.<br>
+          A clod-filled pasture dark as a bear.<br>
+          Yellow blazes around a crown.<br>
+          <br>
+          Lombardy, Tuscany, Umbria, Calabria.<br>
+          Somber oxen. September flares.<br>
+          Wind and silk, parchment and candles.<br>
+          Slumberous, plushy, ponderous, elaborate.<br>
+          <br>
+          A tree, a fruit, a pigment, an ornament.<br>
+          Plumes, juices, bristles, crystals.<br>
+          A mast. A horn. A bramble. A bride.<br>
+          Lombardy, Tuscany, Umbria, Calabria.<br>
+
+        </p>
+    </div>
+  </div>
+
+  <div >
+    <div class="sect" id="sectionTen">
+        <p class="sectTitle" id="ten">Historical Note | David Cornel De Jong</p>
+        <p class="content">
+          The dark men from Oporto came to my door<br>
+          and hammered. The dark men had meat and bread<br>
+          on their palms when they swaggered away<br>
+          beneath a sky the wind had scoured dead<br>
+          and lusterless, stalked out in the soundless day.<br>
+          <br>
+          Then the cat walked in, sniffed her plate<br>
+          and next the tiles where the Oporto men<br>
+          had stood … Dogs barked at last, but phlox<br>
+          gaped silence at the hedge … they barked again,<br>
+          even the scented one on the garden rocks.<br>
+          <br>
+          I saw the dark Oporto men from all my doors,<br>
+          my windows. I feared. But to the white lips<br>
+          along the walls I said: “Surely the wine<br>
+          of Oporto still swells in the grape and drips<br>
+          its fellowship somewhere to be to this as anodyne.”<br>
+          <br>
+          Wine is a civilized thing … and mellow words<br>
+          of comfort aim for the jocular rib; and hope …<br>
+          “These,” I said by the wish made glib, “These<br>
+          were only crows from some raucous slope<br>
+          and are returning there to croak in the trees.”<br>
+          <br>
+          .....<br>
+          <br>
+          Ah, the dogs are dead, the scented one lies deep<br>
+          under bloody earth in the housemaid’s lap.<br>
+          The Oporto men worked well … and very near<br>
+          one crow caws—sometimes lifting its wings to flap—<br>
+          where only a tailless cat is left to hear.<br>
+
+        </p>
+        </div></div>
+        <div style="height:39vh"></div>
+</body>
+<script>
+
+  var controller = new ScrollMagic.Controller();
+
+
+  var active = false;
+  $("#nav").mouseover(
+    function(){
+      active = true;
+    }
+  )
+
+      var sceneTitle = new ScrollMagic.Scene({triggerElement: "#titleSection", duration:$("#titleSection").height() - 5})
+              .setClassToggle("#navTitle", "active")
+              .addTo(controller);
+                sceneTitle.on("enter", function(event){
+                titleScroll();
+              });
+
+    	var sceneOne = new ScrollMagic.Scene({triggerElement: "#sectionOne", duration:$("#sectionOne").height()})
+    					.setClassToggle("#navOne", "active") // add class toggle
+    					.addTo(controller);
+                sceneOne.on("enter", function (event) {
+                 oneScroll();
+              });
+
+    	var sceneTwo = new ScrollMagic.Scene({triggerElement: "#sectionTwo", duration:$("#sectionTwo").height()})
+    					.setClassToggle("#navTwo", "active") // add class toggle
+    					.addTo(controller);
+                sceneTwo.on("enter", function (event) {
+                 twoScroll();
+              });
+
+    	var sceneThree = new ScrollMagic.Scene({triggerElement: "#sectionThree", duration:$("#sectionThree").height()})
+    					.setClassToggle("#navThree", "active") // add class toggle
+    					.addTo(controller);
+                sceneThree.on("enter", function (event) {
+                 threeScroll();
+              });
+
+    	var sceneFour = new ScrollMagic.Scene({triggerElement: "#sectionFour", duration:$("#sectionFour").height()})
+    					.setClassToggle("#navFour", "active") // add class toggle
+    					.addTo(controller);
+                sceneFour.on("enter", function (event) {
+                 fourScroll();
+              });
+
+      var sceneFive = new ScrollMagic.Scene({triggerElement: "#sectionFive", duration:$("#sectionFive").height()})
+              .setClassToggle("#navFive", "active")
+              .addTo(controller);
+                sceneFive.on("enter", function (event) {
+                 fiveScroll();
+              });
+
+      var sceneSix = new ScrollMagic.Scene({triggerElement: "#sectionSix", duration:$("#sectionSix").height()})
+              .setClassToggle("#navSix", "active")
+              .addTo(controller);
+                sceneSix.on("enter", function (event) {
+                 sixScroll();
+              });
+
+      var sceneSeven = new ScrollMagic.Scene({triggerElement: "#sectionSeven", duration:$("#sectionSeven").height()})
+              .setClassToggle("#navSeven", "active")
+              .addTo(controller);
+                sceneSeven.on("enter", function (event) {
+                 sevenScroll();
+              });
+
+      var sceneEight = new ScrollMagic.Scene({triggerElement: "#sectionEight", duration:$("#sectionEight").height()})
+              .setClassToggle("#navEight", "active")
+              .addTo(controller);
+                sceneEight.on("enter", function (event) {
+                 eightScroll();
+              });
+
+      var sceneNine = new ScrollMagic.Scene({triggerElement: "#sectionNine", duration:$("#sectionNine").height()})
+              .setClassToggle("#navNine", "active")
+              .addTo(controller);
+                sceneNine.on("enter", function (event) {
+                 nineScroll();
+              });
+
+      var sceneTen = new ScrollMagic.Scene({triggerElement: "#sectionTen", duration:$("#sectionTen").height()})
+              .setClassToggle("#navTen", "active")
+              .addTo(controller);
+                sceneTen.on("enter", function (event) {
+                 tenScroll();
+              });
+
+function scrollDist(dist){
+  $("#inset").delay(1000).scrollTo(dist, 200);
+}
+
+function titleScroll(){
+scrollDist(0);
+}
+function oneScroll(){
+	//$("#inset").scrollTopp(100);
+scrollDist(100);
+}
+
+function twoScroll(){
+scrollDist(162);
+}
+
+function threeScroll(){
+scrollDist(224);
+}
+
+function fourScroll(){
+scrollDist(286);
+}
+
+function fiveScroll(){
+scrollDist(348);
+}
+
+function sixScroll(){
+scrollDist(410);
+}
+function sevenScroll(){
+scrollDist(472);
+}
+
+function eightScroll(){
+scrollDist(534);
+}
+
+function nineScroll(){
+scrollDist(596);
+}
+
+function tenScroll(){
+scrollDist(658);
+}
+</script>
