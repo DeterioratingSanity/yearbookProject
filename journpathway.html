@@ -516,7 +516,8 @@
               });
 
 function scrollDist(dist){
-  $("#inset").delay(1000).scrollTo(dist, 200);
+  $("#inset").stop(true);
+  $("#inset").delay(1000).scrollTo(dist, 400);
 }
 
 function titleScroll(){

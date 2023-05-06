@@ -387,7 +387,8 @@ html{
 .flip-card {
   background-color: transparent;
   width: 20vw;
-  height: 20vw;
+  min-width: 365px;
+  aspect-ratio: 1/1;
   perspective: 1000px;
   overflow-x: visible;
   margin: 20px;
@@ -420,8 +421,22 @@ html{
 }
 .flip-card-front img{
   width:20vw;
-  height:20vw;
+  min-width: 365px;
+  aspect-ratio: 1/1;
   border-radius: 10px;
+}
+
+@media (max-width: 600px){
+  #nav{
+    right: 1em;
+  }
+  .flip-card{
+    min-width:335px;
+    margin-left: -1em;
+  }
+  .flip-card-front img{
+    min-width:335px;
+  }
 }
 
 .flip-card-front {
