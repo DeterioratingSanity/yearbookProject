@@ -346,6 +346,20 @@ a div{
   max-height:40vh;
   min-height:135px;
 }
+@media (orientation: portrait){
+  #nav{
+    top:10%;
+    right:1em;
+  }
+  #inset{
+    height:95px;
+    min-height:95px;
+  }
+  #outset{
+    height: 95px;
+    min-height:95px;
+  }
+}
 .key{
   content: '';
   display: block;
