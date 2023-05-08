@@ -438,12 +438,21 @@ a div{
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: transform 0.6s;
+  -o-transform-style: preserve-3d;
+  -o-transition: transform 0.6s;
+  -moz-transform-style: preserve-3d;
+  -moz-transition: transform 0.6s;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 15px;
 }
 
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
 }
 
 .flip-card-front, .flip-card-back {
@@ -452,6 +461,9 @@ a div{
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
   border: solid 4px #24272e;
   border-radius: 15px;
 }
@@ -488,6 +500,10 @@ a div{
   background-color: #FF6961;
   color:  #f5f5f5;
   transform: rotateY(180deg);
+  
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
   font-family: 'Ubuntu-Title', sans-serif;
   letter-spacing: .15em;
 }
