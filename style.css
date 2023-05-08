@@ -348,15 +348,16 @@ a div{
 }
 @media (orientation: portrait){
   #nav{
-    top:10%;
+    top:5%;
     right:1em;
+    transform: scale(1.15);
   }
   #inset{
-    height:10vh;
+    height:95px;
     min-height:95px;
   }
   #outset{
-    height: 10vh;
+    height: 95px;
     min-height:95px;
   }
 }
