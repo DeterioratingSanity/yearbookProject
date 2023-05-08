@@ -1,1 +1,1228 @@
+<!-- on scroll incrementing is busted because it stalls out the other scroll func. -->
 
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.cdnfonts.com/css/ubuntu-title" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/division-one" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/the-scratches" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+<style>
+  .sectionInner{
+    background: linear-gradient(9.75turn, #FF6961, #FF3D33);
+    -webkit-mask: var(--mask-edge-zig-zag-vertical);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+  }
+  .book--img{
+    width:100%;
+    aspect-ratio: 1/1;
+  }
+  .bracket--wrapper{
+    padding:2em;
+    width: 65vw;
+    cursor:pointer;
+  }details{
+		  max-width:78vw;
+	  }
+  @media (min-width: 1100px){
+    .bracket--wrapper{
+      display:flex;
+      align-items:center;
+      padding:0;
+      width: 85vw;
+    }
+	  details{
+		  max-width:85vw;
+	  }
+    .book--img{
+      margin: 3vh 3vw;
+      margin-left: 5vw;
+      margin-right: 1vw;
+      aspect-ratio: 1/1;
+    }
+  }
+
+  .wrapper1{
+    background-color: #24272e;
+    height: auto;
+  }.wrapper2{
+    background-color: #f5f5f5;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: auto;
+  }.wrapper3{
+    background-color: #24272e;
+    -webkit-mask: var(--mask-edge-zig-zag-vertical);
+    padding-top: 7px;
+    padding-bottom: 7px;
+    height: auto;
+  }
+
+  .upper_outer-wrapper1{
+    background-color: #24272e;
+    padding-top: 5px;
+    height: auto;
+  }
+  .upper_outer-wrapper2{
+    background-color: #f5f5f5;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    height: auto;
+  }
+
+  .under_outer-wrapper1{
+    background-color: #24272e;
+    padding-bottom: 5px;
+    height: auto;
+  }
+  .under_outer-wrapper2{
+    background-color: #f5f5f5;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    height: auto;
+  }
+
+</style>
+
+</head>
+<body>
+
+  <div id="nav">
+    <div id="outset">
+      <div id="inset">
+          <br><a class="key small"></a><a class="key small"></a>
+          <a class="key" href="#title" id="navTitle"><img src="home-icon.svg" style="top:4px;"></a>
+          <span id="splitter"></span>
+          <a class="key" href="#oneE" id="navOne">   <div style="transform:scale(.95);">'20</div></a>
+          <a class="key" href="#twoE" id="navTwo">   <div style="transform:scale(.95);">'21</div></a>
+          <a class="key" href="#three" id="navThree"><div style="transform:scale(.95);">'22</div></a>
+          <a class="key" href="#four" id="navFour">  <div style="transform:scale(.95);">'23</div></a>
+          <a class="key" href="#five" id="navFive">  <div style="transform:scale(.95); left: 2px">#</div></a>
+    <!--  <a class="key" href="#six" id="navSix"></a>
+          <a class="key" href="#seven" id="navSeven"><div style="transform:scale(.95); left: 2px">#</div></a>
+          <a class="key" href="#eight" id="navEight"><div style="transform:scale(.95); left: 2px">#</div></a>
+          <a class="key" href="#nine" id="navNine">  <div style="transform:scale(.95); left: 2px">#</div></a>
+          <a class="key" href="#ten" id="navTen">    <div style="transform:scale(.95); left: 2px">#</div></a> -->
+          <a class="key small"></a><a class="key small"></a><br>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!--
+
+
+
+
+
+
+
+
+
+  -->
+<div>
+<div>
+  <div class="sect" id="titleSection" style="height:100vh;">
+    <span class="sectTitle" id="title"></span>
+    <img src="./images/22-23/group.jpg" style="width:100vw; height:100vh; object-fit: cover; object-position:middle top">
+    <div style="position:absolute; top: 75%; left: 50%; transform: translate(-50%, -50%);max-width:60%; background-color: #f5f5f5; font-size: 6em; text-align: center; font-family: 'Division One', sans-serif; padding: 10px 5px; color:#FF6961;">OUR HIST&shy;ORY
+    </div>
+  </div>
+</div>
+
+   <div class="upper_outer-wrapper1"  id="sectionOne">
+     <div class="upper_outer-wrapper2">
+       <div class="wrapper3">
+
+    <div class="sect sectionInner" style="justify-content: center; align-items:center">
+        <span class="sectTitle" id="oneE"></span>
+<details style=" background-color: f5f5f5; border-radius: var(--radius-5);transition: .5s;
+border: 4px solid #24272e;">
+  <summary >
+        <div class="bracket--wrapper" style=" background-color: f5f5f5; min-height: 40vh;border-radius: var(--radius-5);">
+          <div style="position: relative;"><img class="book--img" src="https://e7.pngegg.com/pngimages/903/900/png-clipart-question-mark-question-mark-thumbnail.png" style="border-radius: var(--radius-5); border: 4px solid #24272e; min-height:330px; aspect-ratio: 1/1">
+</div>
+          <div class="bracket--test" style="margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em">
+            <div style="text-align:center; margin-top: 7px">Title Title Title</div>
+            <div style="text-align:center; margin-top: 15px">2<span style="font-size: .7em; vertical-align:12px; text-decoration: underline">0</span>19 - 2<span style="font-size: .7em; vertical-align:12px; text-decoration: underline">0</span>20</div>
+
+          </div>
+        </div>
+  </summary>
+  <div class="content" id="contentOne">
+  <hr><div style="padding-top:5px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; width:88%;">
+  Editors
+  </div>
+  <div id="flip--bracket" style="display:flex; flex-wrap: wrap; gap:30px;justify-content:center; margin:auto;">
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%)">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%)">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%)">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%)">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%)">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%);">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+    </div>
+  <hr>
+  <div style="padding-top:5px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; width:88%;">
+    Awards Earned
+  </div>
+    <div style="display:flex; justify-content:center">
+      <img style="height:25vh;"src="https://e7.pngegg.com/pngimages/903/900/png-clipart-question-mark-question-mark-thumbnail.png">
+    </div>
+<br><br>
+  <hr>
+  <div style="padding-top:12px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; width:88%;">
+    Opening Statement<br><br>
+    <span style="position:absolute;color:#FF6961; font-size: 2em;font-family: 'The Scratches', sans-serif;height:.1em;">“</span>
+    &emsp;&ensp;
+	  Opening opening opening opening opening opening opening opening opening opening
+	<br>
+    <div style="color:#FF6961; font-size: 1.2em;font-family: 'The Scratches', sans-serif;margin:auto;text-align:center;"> - Signature </div>
+
+  </div>
+
+    <div style="min-height:20vh"></div>
+  </div>
+</details>
+
+
+                                                      <!--
+                                                      <div style="display:flex; flex-wrap: wrap; gap:30px;justify-content:center;
+                                                      width:85vw;">
+                                                                    <div class="flip-card" >
+                                                                      <div class="flip-card-inner">
+                                                                          <div class="flip-card-front">
+                                                                            <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                                                                          </div>
+                                                                          <div class="flip-card-back">
+                                                                            <div style="top:30%; transform: translateY(70%)">
+                                                                            <h1>John Doe</h1>
+                                                                            <p>Year</p><br>
+                                                                            <p>General</p>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flip-card" >
+                                                                      <div class="flip-card-inner">
+                                                                          <div class="flip-card-front">
+                                                                            <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                                                                          </div>
+                                                                          <div class="flip-card-back">
+                                                                            <div style="top:30%; transform: translateY(70%)">
+                                                                            <h1>John Doe</h1>
+                                                                            <p>Year</p><br>
+                                                                            <p>General</p>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flip-card" >
+                                                                      <div class="flip-card-inner">
+                                                                          <div class="flip-card-front">
+                                                                            <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                                                                          </div>
+                                                                          <div class="flip-card-back">
+                                                                            <div style="top:30%; transform: translateY(70%)">
+                                                                            <h1>John Doe</h1>
+                                                                            <p>Year</p><br>
+                                                                            <p>General</p>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flip-card" >
+                                                                      <div class="flip-card-inner">
+                                                                          <div class="flip-card-front">
+                                                                            <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                                                                          </div>
+                                                                          <div class="flip-card-back">
+                                                                            <div style="top:30%; transform: translateY(70%)">
+                                                                            <h1>John Doe</h1>
+                                                                            <p>Year</p><br>
+                                                                            <p>General</p>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flip-card" >
+                                                                      <div class="flip-card-inner">
+                                                                          <div class="flip-card-front">
+                                                                            <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                                                                          </div>
+                                                                          <div class="flip-card-back">
+                                                                            <div style="top:30%; transform: translateY(70%)">
+                                                                            <h1>John Doe</h1>
+                                                                            <p>Year</p><br>
+                                                                            <p>General</p>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flip-card" >
+                                                                      <div class="flip-card-inner">
+                                                                          <div class="flip-card-front">
+                                                                            <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                                                                          </div>
+                                                                          <div class="flip-card-back">
+                                                                            <div style="top:30%; transform: translateY(70%);">
+                                                                            <h1>John Doe</h1>
+                                                                            <p>Year</p><br>
+                                                                            <p>General</p>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                    </div>
+                                                        </div>
+                                                        -->
+              <!--
+
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <h1>John Doe</h1><br>
+                        <p>Year</p>
+                        <p>General</p>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <h1>John Doe</h1><br>
+                        <p>Year</p>
+                        <p>General</p>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <h1>John Doe</h1><br>
+                        <p>Year</p>
+                        <p>General</p>
+                      </div>
+                    </div>
+                </div><br>
+
+              -->
+    </div>
+  </div></div></div>
+
+  <div class="wrapper1" id="sectionTwo">
+    <div class="wrapper2">
+      <div class="wrapper3">
+    <div class="sect sectionInner" style="justify-content: center; align-items:center">
+        <span class="sectTitle" id="twoE"  ></span>
+
+        <details style=" background-color: f5f5f5; border-radius: var(--radius-5);transition: .5s;
+border: 4px solid #24272e;">
+  <summary >
+        <div class="bracket--wrapper" style=" background-color: f5f5f5; min-height: 40vh;border-radius: var(--radius-5);">
+          <div style="position: relative;"><img class="book--img" src="https://e7.pngegg.com/pngimages/903/900/png-clipart-question-mark-question-mark-thumbnail.png" style="border-radius: var(--radius-5); border: 4px solid #24272e; min-height:330px; aspect-ratio: 1/1">
+</div>
+          <div class="bracket--test" style="margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em">
+            <div style="text-align:center; margin-top: 7px">Title Title Title</div>
+            <div style="text-align:center; margin-top: 15px">2<span style="font-size: .7em; vertical-align:12px; text-decoration: underline">0</span>19 - 2<span style="font-size: .7em; vertical-align:12px; text-decoration: underline">0</span>20</div>
+
+          </div>
+        </div>
+  </summary>
+  <div class="content" id="contentOne">
+  <hr><div style="padding-top:5px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; width:88%;">
+  Editors
+  </div>
+  <div id="flip--bracket" style="display:flex; flex-wrap: wrap; gap:30px;justify-content:center; margin:auto;">
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%)">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%)">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%)">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%)">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%)">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%);">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+    </div>
+  <hr>
+  <div style="padding-top:5px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; width:88%;">
+    Awards Earned
+  </div>
+    <div style="display:flex; justify-content:center">
+      <img style="height:25vh;"src="https://e7.pngegg.com/pngimages/903/900/png-clipart-question-mark-question-mark-thumbnail.png">
+    </div>
+<br><br>
+  <hr>
+  <div style="padding-top:12px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; width:88%;">
+    Opening Statement<br><br>
+    <span style="position:absolute;color:#FF6961; font-size: 2em;font-family: 'The Scratches', sans-serif;height:.1em;">“</span>
+    &emsp;&ensp;
+	  Opening opening opening opening opening opening opening opening opening opening
+	<br>
+    <div style="color:#FF6961; font-size: 1.2em;font-family: 'The Scratches', sans-serif;margin:auto;text-align:center;"> - Signature </div>
+
+  </div>
+
+    <div style="min-height:20vh"></div>
+  </div>
+</details>
+        </div>
+    </div>
+  </div></div></div>
+
+
+<div class="wrapper1" id="sectionThree">
+  <div class="wrapper2">
+    <div class="wrapper3">
+    <div class="sect sectionInner" style="justify-content: center; align-items:center">
+        <span class="sectTitle" id="three"></span>
+        <details style=" background-color: f5f5f5; border-radius: var(--radius-5);transition: .5s;
+border: 4px solid #24272e;">
+  <summary >
+        <div class="bracket--wrapper" style=" background-color: f5f5f5; min-height: 40vh;border-radius: var(--radius-5);">
+          <div style="position: relative;"><img class="book--img" src="https://e7.pngegg.com/pngimages/903/900/png-clipart-question-mark-question-mark-thumbnail.png" style="border-radius: var(--radius-5); border: 4px solid #24272e; min-height:330px; aspect-ratio: 1/1">
+</div>
+          <div class="bracket--test" style="margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em">
+            <div style="text-align:center; margin-top: 7px">Title Title Title</div>
+            <div style="text-align:center; margin-top: 15px">2<span style="font-size: .7em; vertical-align:12px; text-decoration: underline">0</span>19 - 2<span style="font-size: .7em; vertical-align:12px; text-decoration: underline">0</span>20</div>
+
+          </div>
+        </div>
+  </summary>
+  <div class="content" id="contentOne">
+  <hr><div style="padding-top:5px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; width:88%;">
+  Editors
+  </div>
+  <div id="flip--bracket" style="display:flex; flex-wrap: wrap; gap:30px;justify-content:center; margin:auto;">
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%)">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%)">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%)">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%)">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%)">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
+                      </div>
+                      <div class="flip-card-back">
+                        <div style="top:30%; transform: translateY(70%);">
+                        <h1>John Doe</h1>
+                        <p>Year</p><br>
+                        <p>General</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+    </div>
+  <hr>
+  <div style="padding-top:5px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; width:88%;">
+    Awards Earned
+  </div>
+    <div style="display:flex; justify-content:center">
+      <img style="height:25vh;"src="https://e7.pngegg.com/pngimages/903/900/png-clipart-question-mark-question-mark-thumbnail.png">
+    </div>
+<br><br>
+  <hr>
+  <div style="padding-top:12px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; width:88%;">
+    Opening Statement<br><br>
+    <span style="position:absolute;color:#FF6961; font-size: 2em;font-family: 'The Scratches', sans-serif;height:.1em;">“</span>
+    &emsp;&ensp;
+	  Opening opening opening opening opening opening opening opening opening opening
+	<br>
+    <div style="color:#FF6961; font-size: 1.2em;font-family: 'The Scratches', sans-serif;margin:auto;text-align:center;"> - Signature </div>
+
+  </div>
+
+    <div style="min-height:20vh"></div>
+  </div>
+</details>
+        </div>
+    </div>
+  </div></div>
+
+
+<div class="wrapper1" id="sectionFour" >
+  <div class="wrapper2">
+    <div class="wrapper3">
+    <div class="sect sectionInner" style="justify-content: center; align-items:center; ">
+        <span class="sectTitle" id="four"></span>
+
+            <div class="bracket--wrapper" style=" background-color: f5f5f5; min-height: 40vh;border-radius: var(--radius-5);filter:blur(.95em)">
+              <div style="position: relative;"><img class="book--img" src="https://e7.pngegg.com/pngimages/903/900/png-clipart-question-mark-question-mark-thumbnail.png" style="border-radius: var(--radius-5); border: 4px solid #24272e; min-height:330px; aspect-ratio: 1/1; filter:blur(.95em)">
+    </div>
+              <div class="bracket--test" style="margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em">
+                <div style="text-align:center; margin-top: 7px">Title Title Title</div>
+                <div style="text-align:center; margin-top: 15px">2<span style="font-size: .7em; vertical-align:12px; text-decoration: underline">0</span>22 - 2<span style="font-size: .7em; vertical-align:12px; text-decoration: underline">0</span>23</div>
+
+              </div>
+
+
+            </div>
+            <div id="soon">Please wait - Publication Pending</div>
+        </div>
+    </div>
+  </div></div>
+
+
+<div class="under_outer-wrapper1" id="sectionFive">
+  <div class="under_outer-wrapper2">
+    <div class="wrapper3">
+    <div class="sect sectionInner">
+        <span class="sectTitle" id="five"></span>
+        a
+    </div>
+  </div></div></div>
+
+    <!--
+<div class="wrapper1">
+  <div class="wrapper2">
+    <div class="wrapper3">
+    <div class="sect sectInner" id="sectionSix">
+        <span class="sectTitle" id="six"></span>
+        a
+    </div>
+  </div></div></div>
+<br>
+
+  <div>
+    <div class="sect" id="sectionSeven">
+        <p class="sectTitle" id="seven">The Valley Harvest | H. L. Davis</p>
+        <p class="content">
+          Honey in the horn! I brought my horse from the water<br>
+          And from the white grove of tall alders over the spring,<br>
+          And brought him past a row of high hollyhocks<br>
+          Which flew and tore their flowers thin as his mane.<br>
+          <br>
+          And women there watched, with hair blown over their mouths;<br>
+          Yet in watching the oat field they were quiet as the spring<br>.
+          <br>
+          “Are the hollyhocks full bloomed? It is harvest then.<br>
+          The hay falls like sand falling in a high wind<br>
+          When the weeds blow and fly—but steady the sand falls.<br>
+          It is harvest, harvest, and honey in the horn.<br>
+          I would like to go out, in a few days, through the stubble field,<br>
+          And to all the springs—yours too we have known for years—<br>
+          And to the bearing vines, and clean the berries from them.”<br>
+          <br>
+          Call, women!—why do you stand if not for your pride’s sake?<br>
+          <br>
+          But the women would neither call to me nor speak,<br>
+          Nor to any man not mowing during their harvest.<br>
+          They watched with their hair blowing, near the stalks,<br>
+          In the row of red hollyhocks<br>
+          <br>
+          Quiet as the spring.<br>
+          What is by the spring? A bird, and a few old leaves.<br>
+
+        </p>
+    </div>
+  </div>
+
+  <div>
+    <div class="sect" id="sectionEight">
+        <p class="sectTitle" id="eight">Workmen | Herbert Morris</p>
+        <p class="content">
+          Five workmen hired to shovel dirt<br>
+          have passed among them some milk-bottle of<br>
+          cool water which I felt flowed more like love,<br>
+          a drinking whose raw beauty fully hurt.<br>
+          <br>
+          Each mouth touched where the other four had been:<br>
+          that of itself spoke such humanity<br>
+          as to have made it inescapably<br>
+          devotions of my own I struggled in.<br>
+          <br>
+          Imagine that pure structure on the day<br>
+          as lemons on a beach, a house of sand,<br>
+          a coolness in the desert that one’s hand<br>
+          beautifully caused to blossom from decay.<br>
+          <br>
+          That was the way, that was the wealth of way<br>
+          they spent and went in water man to man,<br>
+          common and strong and world to understand.<br>
+          That was their way, and this is what we pay<br>
+          <br>
+          in learning understanding from those five:<br>
+          envy that summer touches them to thirst<br>
+          for gifts of back-lot water, and this first<br>
+          sheer pain that drinking means to be alive.<br>
+
+        </p>
+    </div>
+  </div>
+
+  <div >
+    <div class="sect"id="sectionNine">
+        <p class="sectTitle" id="nine">Italian Sampler | May Swenson</p>
+        <p class="content">
+          Lombardy, Tuscany, Umbria, Calabria.<br>
+          A spear of leaves. A pear.<br>
+          A clod-filled pasture dark as a bear.<br>
+          Yellow blazes around a crown.<br>
+          <br>
+          Lombardy, Tuscany, Umbria, Calabria.<br>
+          Somber oxen. September flares.<br>
+          Wind and silk, parchment and candles.<br>
+          Slumberous, plushy, ponderous, elaborate.<br>
+          <br>
+          A tree, a fruit, a pigment, an ornament.<br>
+          Plumes, juices, bristles, crystals.<br>
+          A mast. A horn. A bramble. A bride.<br>
+          Lombardy, Tuscany, Umbria, Calabria.<br>
+
+        </p>
+    </div>
+  </div>
+
+  <div >
+    <div class="sect" id="sectionTen">
+        <p class="sectTitle" id="ten">Historical Note | David Cornel De Jong</p>
+        <p class="content">
+          The dark men from Oporto came to my door<br>
+          and hammered. The dark men had meat and bread<br>
+          on their palms when they swaggered away<br>
+          beneath a sky the wind had scoured dead<br>
+          and lusterless, stalked out in the soundless day.<br>
+          <br>
+          Then the cat walked in, sniffed her plate<br>
+          and next the tiles where the Oporto men<br>
+          had stood … Dogs barked at last, but phlox<br>
+          gaped silence at the hedge … they barked again,<br>
+          even the scented one on the garden rocks.<br>
+          <br>
+          I saw the dark Oporto men from all my doors,<br>
+          my windows. I feared. But to the white lips<br>
+          along the walls I said: “Surely the wine<br>
+          of Oporto still swells in the grape and drips<br>
+          its fellowship somewhere to be to this as anodyne.”<br>
+          <br>
+          Wine is a civilized thing … and mellow words<br>
+          of comfort aim for the jocular rib; and hope …<br>
+          “These,” I said by the wish made glib, “These<br>
+          were only crows from some raucous slope<br>
+          and are returning there to croak in the trees.”<br>
+          <br>
+          .....<br>
+          <br>
+          Ah, the dogs are dead, the scented one lies deep<br>
+          under bloody earth in the housemaid’s lap.<br>
+          The Oporto men worked well … and very near<br>
+          one crow caws—sometimes lifting its wings to flap—<br>
+          where only a tailless cat is left to hear.<br>
+
+        </p>
+        </div></div>
+-->
+        <div style="height:29vh"></div></div>
+</body><script>
+  class Accordion {
+    constructor(el) {
+      // Store the <details> element
+      this.el = el;
+      // Store the <summary> element
+      this.summary = el.querySelector('summary');
+      // Store the <div class="content"> element
+      this.content = el.querySelector('.content');
+
+      // Store the animation object (so we can cancel it if needed)
+      this.animation = null;
+      // Store if the element is closing
+      this.isClosing = false;
+      // Store if the element is expanding
+      this.isExpanding = false;
+      // Detect user clicks on the summary element
+      this.summary.addEventListener('click', (e) => this.onClick(e));
+    }
+
+    onClick(e) {
+      // Stop default behaviour from the browser
+      e.preventDefault();
+      // Add an overflow on the <details> to avoid content overflowing
+      this.el.style.overflow = 'hidden';
+      // Check if the element is being closed or is already closed
+      if (this.isClosing || !this.el.open) {
+        this.open();
+      // Check if the element is being openned or is already open
+      } else if (this.isExpanding || this.el.open) {
+        this.shrink();
+      }
+    }
+
+    shrink() {
+      // Set the element as "being closed"
+      this.isClosing = true;
+
+      // Store the current height of the element
+      const startHeight = `${this.el.offsetHeight}px`;
+      // Calculate the height of the summary
+      const endHeight = `${this.summary.offsetHeight}px`;
+
+      // If there is already an animation running
+      if (this.animation) {
+        // Cancel the current animation
+        this.animation.cancel();
+      }
+
+      // Start a WAAPI animation
+      this.animation = this.el.animate({
+        // Set the keyframes from the startHeight to endHeight
+        height: [startHeight, endHeight]
+      }, {
+        duration: 400,
+        easing: 'ease-out'
+      });
+
+      // When the animation is complete, call onAnimationFinish()
+      this.animation.onfinish = () => this.onAnimationFinish(false);
+      // If the animation is cancelled, isClosing variable is set to false
+      this.animation.oncancel = () => this.isClosing = false;
+    }
+
+    open() {
+      // Apply a fixed height on the element
+      this.el.style.height = `${this.el.offsetHeight}px`;
+      // Force the [open] attribute on the details element
+      this.el.open = true;
+      // Wait for the next frame to call the expand function
+      window.requestAnimationFrame(() => this.expand());
+    }
+
+    expand() {
+      // Set the element as "being expanding"
+      this.isExpanding = true;
+      // Get the current fixed height of the element
+      const startHeight = `${this.el.offsetHeight}px`;
+      // Calculate the open height of the element (summary height + content height)
+      const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`;
+
+      // If there is already an animation running
+      if (this.animation) {
+        // Cancel the current animation
+        this.animation.cancel();
+      }
+
+      // Start a WAAPI animation
+      this.animation = this.el.animate({
+        // Set the keyframes from the startHeight to endHeight
+        height: [startHeight, endHeight]
+      }, {
+        duration: 600,
+        easing: 'ease-out'
+      });
+      // When the animation is complete, call onAnimationFinish()
+      this.animation.onfinish = () => this.onAnimationFinish(true);
+      // If the animation is cancelled, isExpanding variable is set to false
+      this.animation.oncancel = () => this.isExpanding = false;
+    }
+
+    onAnimationFinish(open) {
+      // Set the open attribute based on the parameter
+      this.el.open = open;
+      // Clear the stored animation
+      this.animation = null;
+      // Reset isClosing & isExpanding
+      this.isClosing = false;
+      this.isExpanding = false;
+      // Remove the overflow hidden and the fixed height
+      this.el.style.height = this.el.style.overflow = '';
+
+      //This WORKS!!!
+      sceneOne.duration($("#sectionOne").height());
+      sceneTwo.duration($("#sectionTwo").height());
+    }
+  }
+
+  document.querySelectorAll('details').forEach((el) => {
+    new Accordion(el);
+  });
+
+</script><script>
+  class Accordion {
+    constructor(el) {
+      // Store the <details> element
+      this.el = el;
+      // Store the <summary> element
+      this.summary = el.querySelector('summary');
+      // Store the <div class="content"> element
+      this.content = el.querySelector('.content');
+
+      // Store the animation object (so we can cancel it if needed)
+      this.animation = null;
+      // Store if the element is closing
+      this.isClosing = false;
+      // Store if the element is expanding
+      this.isExpanding = false;
+      // Detect user clicks on the summary element
+      this.summary.addEventListener('click', (e) => this.onClick(e));
+    }
+
+    onClick(e) {
+      // Stop default behaviour from the browser
+      e.preventDefault();
+      // Add an overflow on the <details> to avoid content overflowing
+      this.el.style.overflow = 'hidden';
+      // Check if the element is being closed or is already closed
+      if (this.isClosing || !this.el.open) {
+        this.open();
+      // Check if the element is being openned or is already open
+      } else if (this.isExpanding || this.el.open) {
+        this.shrink();
+      }
+    }
+
+    shrink() {
+      // Set the element as "being closed"
+      this.isClosing = true;
+
+      // Store the current height of the element
+      const startHeight = `${this.el.offsetHeight}px`;
+      // Calculate the height of the summary
+      const endHeight = `${this.summary.offsetHeight}px`;
+
+      // If there is already an animation running
+      if (this.animation) {
+        // Cancel the current animation
+        this.animation.cancel();
+      }
+
+      // Start a WAAPI animation
+      this.animation = this.el.animate({
+        // Set the keyframes from the startHeight to endHeight
+        height: [startHeight, endHeight]
+      }, {
+        duration: 400,
+        easing: 'ease-out'
+      });
+
+      // When the animation is complete, call onAnimationFinish()
+      this.animation.onfinish = () => this.onAnimationFinish(false);
+      // If the animation is cancelled, isClosing variable is set to false
+      this.animation.oncancel = () => this.isClosing = false;
+    }
+
+    open() {
+      // Apply a fixed height on the element
+      this.el.style.height = `${this.el.offsetHeight}px`;
+      // Force the [open] attribute on the details element
+      this.el.open = true;
+      // Wait for the next frame to call the expand function
+      window.requestAnimationFrame(() => this.expand());
+    }
+
+    expand() {
+      // Set the element as "being expanding"
+      this.isExpanding = true;
+      // Get the current fixed height of the element
+      const startHeight = `${this.el.offsetHeight}px`;
+      // Calculate the open height of the element (summary height + content height)
+      const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`;
+
+      // If there is already an animation running
+      if (this.animation) {
+        // Cancel the current animation
+        this.animation.cancel();
+      }
+
+      // Start a WAAPI animation
+      this.animation = this.el.animate({
+        // Set the keyframes from the startHeight to endHeight
+        height: [startHeight, endHeight]
+      }, {
+        duration: 600,
+        easing: 'ease-out'
+      });
+      // When the animation is complete, call onAnimationFinish()
+      this.animation.onfinish = () => this.onAnimationFinish(true);
+      // If the animation is cancelled, isExpanding variable is set to false
+      this.animation.oncancel = () => this.isExpanding = false;
+    }
+
+    onAnimationFinish(open) {
+      // Set the open attribute based on the parameter
+      this.el.open = open;
+      // Clear the stored animation
+      this.animation = null;
+      // Reset isClosing & isExpanding
+      this.isClosing = false;
+      this.isExpanding = false;
+      // Remove the overflow hidden and the fixed height
+      this.el.style.height = this.el.style.overflow = '';
+
+      //This WORKS!!!
+      sceneOne.duration($("#sectionOne").height());
+      sceneTwo.duration($("#sectionTwo").height());
+    }
+  }
+
+  document.querySelectorAll('details').forEach((el) => {
+    new Accordion(el);
+  });
+
+</script>
+<script>
+
+  var controller = new ScrollMagic.Controller();
+// without thus EVERYTHING BREAKS. I do not know.
+  $( document ).ready(function() {
+    $("#inset").stop(true);
+    scrollStart(0);
+  });
+      var sceneTitle = new ScrollMagic.Scene({triggerElement: "#titleSection", duration:$("#titleSection").height() - 5})
+              .setClassToggle("#navTitle", "active")
+              .addTo(controller);
+                sceneTitle.on("enter", function(event){
+                scrollStart(0);
+              });
+
+    	var sceneOne = new ScrollMagic.Scene({triggerElement: "#sectionOne", duration:$("#sectionOne").height()})
+    					.setClassToggle("#navOne", "active") // add class toggle
+    					.addTo(controller);
+                sceneOne.on("enter", function (event) {
+                 scrollDist(100);
+              });
+
+    	var sceneTwo = new ScrollMagic.Scene({triggerElement: "#sectionTwo", duration:$("#sectionTwo").height()})
+    					.setClassToggle("#navTwo", "active") // add class toggle
+    					.addTo(controller);
+                sceneTwo.on("enter", function (event) {
+                 scrollDist(162);
+              });
+
+    	var sceneThree = new ScrollMagic.Scene({triggerElement: "#sectionThree", duration:$("#sectionThree").height()})
+    					.setClassToggle("#navThree", "active") // add class toggle
+    					.addTo(controller);
+                sceneThree.on("enter", function (event) {
+                 scrollDist(224);
+              });
+
+    	var sceneFour = new ScrollMagic.Scene({triggerElement: "#sectionFour", duration:$("#sectionFour").height()})
+    					.setClassToggle("#navFour", "active") // add class toggle
+    					.addTo(controller);
+                sceneFour.on("enter", function (event) {
+                 scrollDist(286);
+              });
+
+      var sceneFive = new ScrollMagic.Scene({triggerElement: "#sectionFive", duration:$("#sectionFive").height()})
+              .setClassToggle("#navFive", "active")
+              .addTo(controller);
+                sceneFive.on("enter", function (event) {
+                scrollDist(348);
+              });
+
+      var sceneSix = new ScrollMagic.Scene({triggerElement: "#sectionSix", duration:$("#sectionSix").height()})
+              .setClassToggle("#navSix", "active")
+              .addTo(controller);
+                sceneSix.on("enter", function (event) {
+                scrollDist(410);
+              });
+
+      var sceneSeven = new ScrollMagic.Scene({triggerElement: "#sectionSeven", duration:$("#sectionSeven").height()})
+              .setClassToggle("#navSeven", "active")
+              .addTo(controller);
+                sceneSeven.on("enter", function (event) {
+                scrollDist(472);
+              });
+
+      var sceneEight = new ScrollMagic.Scene({triggerElement: "#sectionEight", duration:$("#sectionEight").height()})
+              .setClassToggle("#navEight", "active")
+              .addTo(controller);
+                sceneEight.on("enter", function (event) {
+                scrollDist(534);
+              });
+
+      var sceneNine = new ScrollMagic.Scene({triggerElement: "#sectionNine", duration:$("#sectionNine").height()})
+              .setClassToggle("#navNine", "active")
+              .addTo(controller);
+                sceneNine.on("enter", function (event) {
+                scrollDist(596);
+              });
+
+      var sceneTen = new ScrollMagic.Scene({triggerElement: "#sectionTen", duration:$("#sectionTen").height()})
+              .setClassToggle("#navTen", "active")
+              .addTo(controller);
+                sceneTen.on("enter", function (event) {
+                scrollDist(658);
+              });
+
+
+var incrementer =  0;
+  if ($("#inset").height() >= 330){
+    incrementer = 0;
+  } else if ($("#inset").height() >= 310){
+    incrementer = $("#inset").height() / 12;
+  } else if ($("#inset").height() >= 280){
+    incrementer = $("#inset").height() / 7;
+  } else if ($("#inset").height() >= 250){
+    incrementer = $("#inset").height() / 5;
+  } else if ($("#inset").height() >= 230){
+    incrementer = $("#inset").height() / 4;
+  } else if ($("#inset").height() >= 215){
+    incrementer = $("#inset").height() / 3;
+  } else if ($("#inset").height() >= 200) {
+    incrementer = $("#inset").height() / 2.7;
+  } else if ($("#inset").height() >= 185){
+    incrementer = $("#inset").height() / 2.3;
+  } else if ($("#inset").height() >= 160){
+    incrementer = $("#inset").height() / 1.7;
+  } else if ($("#inset").height() >= 145){
+    incrementer = $("#inset").height() / 1.4;
+  } else if ($("#inset").height() == 95){
+    incrementer = $("#inset").height() + 39;
+  } else {
+    incrementer = $("#inset").height() / 1.2;
+  }
+//else {
+  //incrementer = $("#inset").height() / 3;
+//}
+
+function scrollDist(dist){
+  $("#inset").stop(true);
+  $("#inset").delay(1000).scrollTo((dist + incrementer), 400);
+  //gsap.to("#inset", {duration: 1,  scrollTo: dist});
+}
+function scrollStart(dist){
+  $("#inset").stop(true);
+  $("#inset").delay(1000).scrollTo((dist + incrementer + 5), 400);
+  //gsap.to("#inset", {duration: 1,  scrollTo: dist});
+}
+</script>
