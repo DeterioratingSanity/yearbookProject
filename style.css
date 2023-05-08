@@ -352,11 +352,11 @@ a div{
     right:1em;
   }
   #inset{
-    height:95px;
+    height:10vh;
     min-height:95px;
   }
   #outset{
-    height: 95px;
+    height: 10vh;
     min-height:95px;
   }
 }
