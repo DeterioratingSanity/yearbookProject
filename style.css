@@ -461,17 +461,21 @@ a div{
   aspect-ratio: 1/1;
   border-radius: 10px;
 }
-
+#flip--bracket{
+  width:72vw;
+}
 @media (max-width: 600px){
   #nav{
     right: 1em;
   }
   .flip-card{
-    min-width:335px;
-    margin-left: -1em;
+    min-width:305px;
+    margin-left: -2em;
   }
   .flip-card-front img{
-    min-width:335px;
+    min-width:305px;
+  }#flip--bracket{
+    width:60vw;
   }
 }
 
@@ -489,4 +493,21 @@ a div{
 }
 .flip-card-back p{
   font-size: 1.5em;
+}
+
+#soon{
+  transform:translate(3vw);
+  position:absolute;
+  font-family: 'Division One', sans-serif;
+  font-size: 3em;
+  width:60vw;
+  margin:auto;
+  text-align:center;
+  color: #FF6961;
+}
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
 }
