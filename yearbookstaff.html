@@ -39,12 +39,32 @@
   }details{
 		  max-width:78vw;
 	  }
+    .bracket--holder{
+      min-width:45vw;
+      cursor: pointer;
+    }
+    .bracket--open{
+      max-width:55%;
+    }
+    .bracket--holder div{
+      transition: 0.5s;
+    }
+    .bracket--holder:hover div{
+      transform: scale(1.5);
+      transition: 0.3s;
+    }
   @media (min-width: 1100px){
     .bracket--wrapper{
       display:flex;
       align-items:center;
       padding:0;
       width: 85vw;
+    }
+    .bracket--holder{
+      min-width:65vw;
+    }
+    .bracket--open{
+      max-width:75vw;
     }
 	  details{
 		  max-width:85vw;
@@ -110,7 +130,7 @@
           <span id="splitter"></span>
           <a class="key" href="#oneE" id="navOne">   <div style="transform:scale(.95);">#</div></a>
           <a class="key" href="#twoE" id="navTwo">   <div style="transform:scale(.95);">'21</div></a>
-          <a class="key" href="#three" id="navThree"><div style="transform:scale(.95);">'22</div></a>
+          <a class="key" href="#three" id="navThree"><div style="transform:scale(.95);"><img src="book.svg" style="top:0;left:0;height:18px; transform: scale(1.2)"></div></a>
           <a class="key" href="#four" id="navFour">  <div style="transform:scale(.95);">'23</div></a>
           <a class="key" href="#five" id="navFive">  <div style="transform:scale(.95); left: 2px">#</div></a>
     <!--  <a class="key" href="#six" id="navSix"></a>
@@ -124,7 +144,9 @@
     </div>
   </div>
 
-
+  <a id="nav--home" href="index.html">
+    <img src="home-button.svg" style="top:4px;">
+  </a>
   <!--
 
 
@@ -152,15 +174,15 @@
 
     <div class="sect sectionInner" style="justify-content: center; align-items:center">
         <span class="sectTitle" id="oneE"></span>
-<div style=" background-color: f5f5f5; border-radius: var(--radius-5);transition: .5s;
-border: 4px solid #24272e;padding-top:12px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; max-width:88%;padding: 1em">
-	
-       
+<div class="bracket--open" style=" background-color: f5f5f5; border-radius: var(--radius-5);transition: .5s;
+border: 4px solid #24272e;padding-top:12px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; padding: 1em">
+
+
     <span style="position:absolute;color:#FF6961; font-size: 2em;font-family: 'The Scratches', sans-serif;height:.1em;">“</span>
     &emsp;&ensp;
-	  Opening opening opening opening opening opening opening opening opening opening
+	  Opening remarks lorum ipsum dolor sit amet"
 	<br><br>
-    <div style="color:#FF6961; font-size: 1.2em;font-family: 'The Scratches', sans-serif;margin:auto;text-align:center;"> - Signature </div>
+    <div style="color:#FF6961; font-size: 1.2em;font-family: 'The Scratches', sans-serif;margin:auto;text-align:center;"> - Signa&shy;ture </div>
 
 	    </div>
 
@@ -302,134 +324,20 @@ border: 4px solid #24272e;padding-top:12px;margin:auto; font-family: 'Division O
     <div class="sect sectionInner" style="justify-content: center; align-items:center">
         <span class="sectTitle" id="twoE"  ></span>
 
-        <details style=" background-color: f5f5f5; border-radius: var(--radius-5);transition: .5s;
-border: 4px solid #24272e;">
-  <summary >
-        <div class="bracket--wrapper" style=" background-color: f5f5f5; min-height: 40vh;border-radius: var(--radius-5);">
-          <div style="position: relative;"><img class="book--img" src="https://e7.pngegg.com/pngimages/903/900/png-clipart-question-mark-question-mark-thumbnail.png" style="border-radius: var(--radius-5); border: 4px solid #24272e; min-height:330px; aspect-ratio: 1/1">
-</div>
-          <div class="bracket--test" style="margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em">
-            <div style="text-align:center; margin-top: 7px">Title Title Title</div>
-            <div style="text-align:center; margin-top: 15px">2<span style="font-size: .7em; vertical-align:12px; text-decoration: underline">0</span>19 - 2<span style="font-size: .7em; vertical-align:12px; text-decoration: underline">0</span>20</div>
+        <div class="bracket--open" style=" background-color: f5f5f5; border-radius: var(--radius-5);transition: .5s;
+        border: 4px solid #24272e;padding-top:12px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; padding: 1em">
 
-          </div>
-        </div>
-  </summary>
-  <div class="content" id="contentOne">
-  <hr><div style="padding-top:5px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; width:88%;">
-  Editors
-  </div>
-  <div id="flip--bracket" style="display:flex; flex-wrap: wrap; gap:30px;justify-content:center; margin:auto;">
-                <div class="flip-card" >
-                  <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
-                      </div>
-                      <div class="flip-card-back">
-                        <div style="top:30%; transform: translateY(70%)">
-                        <h1>John Doe</h1>
-                        <p>Year</p><br>
-                        <p>General</p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="flip-card" >
-                  <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
-                      </div>
-                      <div class="flip-card-back">
-                        <div style="top:30%; transform: translateY(70%)">
-                        <h1>John Doe</h1>
-                        <p>Year</p><br>
-                        <p>General</p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="flip-card" >
-                  <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
-                      </div>
-                      <div class="flip-card-back">
-                        <div style="top:30%; transform: translateY(70%)">
-                        <h1>John Doe</h1>
-                        <p>Year</p><br>
-                        <p>General</p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="flip-card" >
-                  <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
-                      </div>
-                      <div class="flip-card-back">
-                        <div style="top:30%; transform: translateY(70%)">
-                        <h1>John Doe</h1>
-                        <p>Year</p><br>
-                        <p>General</p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="flip-card" >
-                  <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
-                      </div>
-                      <div class="flip-card-back">
-                        <div style="top:30%; transform: translateY(70%)">
-                        <h1>John Doe</h1>
-                        <p>Year</p><br>
-                        <p>General</p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="flip-card" >
-                  <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
-                      </div>
-                      <div class="flip-card-back">
-                        <div style="top:30%; transform: translateY(70%);">
-                        <h1>John Doe</h1>
-                        <p>Year</p><br>
-                        <p>General</p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-    </div>
-  <hr>
-  <div style="padding-top:5px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; width:88%;">
-    Awards Earned
-  </div>
-    <div style="display:flex; justify-content:center">
-      <img style="height:25vh;"src="https://e7.pngegg.com/pngimages/903/900/png-clipart-question-mark-question-mark-thumbnail.png">
-    </div>
-<br><br>
-  <hr>
-  <div style="padding-top:12px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; width:88%;">
-    Opening Statement<br><br>
-    <span style="position:absolute;color:#FF6961; font-size: 2em;font-family: 'The Scratches', sans-serif;height:.1em;">“</span>
-    &emsp;&ensp;
-	  Opening opening opening opening opening opening opening opening opening opening
-	<br>
-    <div style="color:#FF6961; font-size: 1.2em;font-family: 'The Scratches', sans-serif;margin:auto;text-align:center;"> - Signature </div>
 
-  </div>
+            <span style="position:absolute;color:#FF6961; font-size: 2em;font-family: 'The Scratches', sans-serif;height:.1em;">“</span>
+            &emsp;&ensp;
+        	  Opening remarks lorum ipsum dolor sit amet"
+        	<br><br>
+            <div style="color:#FF6961; font-size: 1.2em;font-family: 'The Scratches', sans-serif;margin:auto;text-align:center;"> - Signa&shy;ture </div>
 
-    <div style="min-height:20vh"></div>
-  </div>
-</details>
+        	    </div>
         </div>
     </div>
-  </div></div></div>
+  </div></div>
 
 
 <div class="wrapper1" id="sectionThree">
@@ -437,131 +345,12 @@ border: 4px solid #24272e;">
     <div class="wrapper3">
     <div class="sect sectionInner" style="justify-content: center; align-items:center">
         <span class="sectTitle" id="three"></span>
-        <details style=" background-color: f5f5f5; border-radius: var(--radius-5);transition: .5s;
-border: 4px solid #24272e;">
-  <summary >
-        <div class="bracket--wrapper" style=" background-color: f5f5f5; min-height: 40vh;border-radius: var(--radius-5);">
-          <div style="position: relative;"><img class="book--img" src="https://e7.pngegg.com/pngimages/903/900/png-clipart-question-mark-question-mark-thumbnail.png" style="border-radius: var(--radius-5); border: 4px solid #24272e; min-height:330px; aspect-ratio: 1/1">
-</div>
-          <div class="bracket--test" style="margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em">
-            <div style="text-align:center; margin-top: 7px">Title Title Title</div>
-            <div style="text-align:center; margin-top: 15px">2<span style="font-size: .7em; vertical-align:12px; text-decoration: underline">0</span>19 - 2<span style="font-size: .7em; vertical-align:12px; text-decoration: underline">0</span>20</div>
+        <div class="bracket--open bracket--holder" style=" background-color: f5f5f5; border-radius: var(--radius-5);transition: .5s;
+        border: 4px solid #24272e;padding-top:12px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; padding: 1em; text-align: center">
 
-          </div>
-        </div>
-  </summary>
-  <div class="content" id="contentOne">
-  <hr><div style="padding-top:5px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; width:88%;">
-  Editors
-  </div>
-  <div id="flip--bracket" style="display:flex; flex-wrap: wrap; gap:30px;justify-content:center; margin:auto;">
-                <div class="flip-card" >
-                  <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
-                      </div>
-                      <div class="flip-card-back">
-                        <div style="top:30%; transform: translateY(70%)">
-                        <h1>John Doe</h1>
-                        <p>Year</p><br>
-                        <p>General</p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="flip-card" >
-                  <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
-                      </div>
-                      <div class="flip-card-back">
-                        <div style="top:30%; transform: translateY(70%)">
-                        <h1>John Doe</h1>
-                        <p>Year</p><br>
-                        <p>General</p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="flip-card" >
-                  <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
-                      </div>
-                      <div class="flip-card-back">
-                        <div style="top:30%; transform: translateY(70%)">
-                        <h1>John Doe</h1>
-                        <p>Year</p><br>
-                        <p>General</p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="flip-card" >
-                  <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
-                      </div>
-                      <div class="flip-card-back">
-                        <div style="top:30%; transform: translateY(70%)">
-                        <h1>John Doe</h1>
-                        <p>Year</p><br>
-                        <p>General</p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="flip-card" >
-                  <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
-                      </div>
-                      <div class="flip-card-back">
-                        <div style="top:30%; transform: translateY(70%)">
-                        <h1>John Doe</h1>
-                        <p>Year</p><br>
-                        <p>General</p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="flip-card" >
-                  <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <img src="https://cdn4.vectorstock.com/i/1000x1000/28/63/profile-placeholder-image-gray-silhouette-vector-21542863.jpg" alt="Avatar">
-                      </div>
-                      <div class="flip-card-back">
-                        <div style="top:30%; transform: translateY(70%);">
-                        <h1>John Doe</h1>
-                        <p>Year</p><br>
-                        <p>General</p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-    </div>
-  <hr>
-  <div style="padding-top:5px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; width:88%;">
-    Awards Earned
-  </div>
-    <div style="display:flex; justify-content:center">
-      <img style="height:25vh;"src="https://e7.pngegg.com/pngimages/903/900/png-clipart-question-mark-question-mark-thumbnail.png">
-    </div>
-<br><br>
-  <hr>
-  <div style="padding-top:12px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; width:88%;">
-    Opening Statement<br><br>
-    <span style="position:absolute;color:#FF6961; font-size: 2em;font-family: 'The Scratches', sans-serif;height:.1em;">“</span>
-    &emsp;&ensp;
-	  Opening opening opening opening opening opening opening opening opening opening
-	<br>
-    <div style="color:#FF6961; font-size: 1.2em;font-family: 'The Scratches', sans-serif;margin:auto;text-align:center;"> - Signature </div>
 
-  </div>
-
-    <div style="min-height:20vh"></div>
-  </div>
-</details>
+          <div>  OUR <span style="color:#FF6961;">HISTORY</span> </div>
+        	    </div>
         </div>
     </div>
   </div></div>
@@ -573,18 +362,17 @@ border: 4px solid #24272e;">
     <div class="sect sectionInner" style="justify-content: center; align-items:center; ">
         <span class="sectTitle" id="four"></span>
 
-            <div class="bracket--wrapper" style=" background-color: f5f5f5; min-height: 40vh;border-radius: var(--radius-5);filter:blur(.95em)">
-              <div style="position: relative;"><img class="book--img" src="https://e7.pngegg.com/pngimages/903/900/png-clipart-question-mark-question-mark-thumbnail.png" style="border-radius: var(--radius-5); border: 4px solid #24272e; min-height:330px; aspect-ratio: 1/1; filter:blur(.95em)">
-    </div>
-              <div class="bracket--test" style="margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em">
-                <div style="text-align:center; margin-top: 7px">Title Title Title</div>
-                <div style="text-align:center; margin-top: 15px">2<span style="font-size: .7em; vertical-align:12px; text-decoration: underline">0</span>22 - 2<span style="font-size: .7em; vertical-align:12px; text-decoration: underline">0</span>23</div>
+        <div class="bracket--open" style=" background-color: f5f5f5; border-radius: var(--radius-5);transition: .5s;
+        border: 4px solid #24272e;padding-top:12px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; padding: 1em">
+
+
+            <span style="position:absolute;color:#FF6961; font-size: 2em;font-family: 'The Scratches', sans-serif;height:.1em;">“</span>
+            &emsp;&ensp;
+            Opening remarks lorum ipsum dolor sit amet"
+          <br><br>
+            <div style="color:#FF6961; font-size: 1.2em;font-family: 'The Scratches', sans-serif;margin:auto;text-align:center;"> - Signa&shy;ture </div>
 
               </div>
-
-
-            </div>
-            <div id="soon">Please wait - Publication Pending</div>
         </div>
     </div>
   </div></div>
@@ -595,7 +383,17 @@ border: 4px solid #24272e;">
     <div class="wrapper3">
     <div class="sect sectionInner">
         <span class="sectTitle" id="five"></span>
-        a
+        <div class="bracket--open" style=" background-color: f5f5f5; border-radius: var(--radius-5);transition: .5s;
+        border: 4px solid #24272e;padding-top:12px;margin:auto; font-family: 'Division One', sans-serif; font-size: 3.4em; padding: 1em">
+
+
+            <span style="position:absolute;color:#FF6961; font-size: 2em;font-family: 'The Scratches', sans-serif;height:.1em;">“</span>
+            &emsp;&ensp;
+        	  Opening remarks lorum ipsum dolor sit amet"
+        	<br><br>
+            <div style="color:#FF6961; font-size: 1.2em;font-family: 'The Scratches', sans-serif;margin:auto;text-align:center;"> - Signa&shy;ture </div>
+
+        	    </div>
     </div>
   </div></div></div>
 
@@ -741,6 +539,12 @@ border: 4px solid #24272e;">
 -->
         </div>
 </body><script>
+
+  $("#sectionThree").click(function(){
+    window.open('./history.html','_self');
+    return false;
+  })
+
   class Accordion {
     constructor(el) {
       // Store the <details> element
