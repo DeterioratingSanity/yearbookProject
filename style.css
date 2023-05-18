@@ -32,8 +32,8 @@
   --color-two: #5E1916; /* Primary Color for Journalism Sect. Homepage */
 
   /* These references tie to the left and right hero images for the home page; Only alter inside the quotation marks (" ") beginning from "https://" */
-  --yearbook-hero: url("https://media.istockphoto.com/id/1169127480/photo/media-interview-journalists-interviewing-politician-or-businessman.jpg?s=612x612&w=0&k=20&c=tWRq_W5F6uheEJyg7J4uhWw2cs8fJVxzaX44g9At8Q8=");
-  --journalism-hero: url("https://media.cntraveler.com/photos/5900bcac867df9167f358480/16:9/w_1280,c_limit/GettyImages-516978723.jpg");
+  --yearbook-hero: url("https://media.gettyimages.com/id/1325026979/photo/footpath-in-green-city-park-at-spring-day.jpg?s=612x612&w=gi&k=20&c=cu3ld6lKnHmLyOxskQeR9hkMaPH_otCx4bHxIABsgbQ=");
+  --journalism-hero: url("https://media.gettyimages.com/id/1325026979/photo/footpath-in-green-city-park-at-spring-day.jpg?s=612x612&w=gi&k=20&c=cu3ld6lKnHmLyOxskQeR9hkMaPH_otCx4bHxIABsgbQ=");
 
   /* This reference ties to the logo image. If changing it pushes it off-center, you may have to enter the danger zone.
   Input "Ctrl + F" to search, input "--logo-hero" minus quotes. "top" and "left" with percentile values control UPPER
