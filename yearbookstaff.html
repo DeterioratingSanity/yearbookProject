@@ -544,7 +544,12 @@ Within the pages of Seen & Unseen, we hope to have revealed what you may not hav
         </div>
 </body>
 <script>
-
+ $("#sectionThree").click(function(){
+    window.open('./history.html','_self');
+    return false;
+  })
+	
+	
   var controller = new ScrollMagic.Controller();
 // without thus EVERYTHING BREAKS. I do not know.
   $( document ).ready(function() {
