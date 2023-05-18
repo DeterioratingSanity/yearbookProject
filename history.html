@@ -1121,10 +1121,10 @@ border: 4px solid #24272e;">
 
   var controller = new ScrollMagic.Controller();
 // without thus EVERYTHING BREAKS. I do not know.
-//  $( document ).ready(function() {
-//    $("#inset").stop(true);
+  $( document ).ready(function() {
+    $("#inset").stop(true);
 //    scrollStart(0);
-//  });
+  });
       var sceneTitle = new ScrollMagic.Scene({triggerElement: "#titleSection", duration:$("#titleSection").height() - 5})
               .setClassToggle("#navTitle", "active")
               .addTo(controller);
