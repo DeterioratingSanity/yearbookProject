@@ -33,7 +33,7 @@
 
   /* These references tie to the left and right hero images for the home page; Only alter inside the quotation marks (" ") beginning from "https://" */
   --yearbook-hero: url("https://media.gettyimages.com/id/1325026979/photo/footpath-in-green-city-park-at-spring-day.jpg?s=612x612&w=gi&k=20&c=cu3ld6lKnHmLyOxskQeR9hkMaPH_otCx4bHxIABsgbQ=");
-  --journalism-hero: url("https://media.gettyimages.com/id/1325026979/photo/footpath-in-green-city-park-at-spring-day.jpg?s=612x612&w=gi&k=20&c=cu3ld6lKnHmLyOxskQeR9hkMaPH_otCx4bHxIABsgbQ=");
+  --journalism-hero: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdOI12JWqvV9FwMmwVNvK1GHPpr5NVqQyxig:https://media.istockphoto.com/id/1211975936/photo/the-parks-meadows-and-thick-woods-under-the-clear-sky-in-spring.jpg%3Fs%3D612x612%26w%3D0%26k%3D20%26c%3DJB5a1DaszANqCf2nGdrcJ92SsDsOQ63KurXykPszWww%3D&usqp=CAU");
 
   /* This reference ties to the logo image. If changing it pushes it off-center, you may have to enter the danger zone.
   Input "Ctrl + F" to search, input "--logo-hero" minus quotes. "top" and "left" with percentile values control UPPER
