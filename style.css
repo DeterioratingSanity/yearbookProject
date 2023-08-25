@@ -552,3 +552,37 @@ transition: .5s;
   border-radius: 50%;
   margin: -1.45em -2em;
 }
+
+#directory_frame{
+  position: absolute;
+  margin-top: 100vh;
+  min-height: 20vh;
+  padding: 20px;
+  background-color: #ff6961; 
+  color: white; 
+  width: 100%; 
+  font-size: 1.5em;
+}
+#directory_title{
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 10px 0 0 20px
+}
+.directory_flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+.directory_margin{
+  margin: 10px 20px 20px 20px;
+}
+.link{
+  color:white;
+  text-decoration: none;
+  font-family: serif;
+  display: block;
+  letter-spacing: normal;
+  margin: 5px 0 5px 0;
+}
+.linkhead{
+  font-weight: bold;
+}
