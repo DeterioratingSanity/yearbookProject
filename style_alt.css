@@ -1,63 +1,93 @@
 body{
-  margin: 0;
+  margin: 0; /* Remove outlines */
+}
+a { /* Allow links (esp in index) to preserve native class and/or id styling in favor of defaults | Ref "V Ovchinnikov" and "Frxstrem" on stackoverflow; Posted Jan 19 2012, Edited Nay 1 2018, Read September 7 2023 */
+  color: inherit;
+  text-decoration: inherit;
 }
 
-#home_nav_holder{
-  height: 100dvh;
+/* HOMEPAGE */
 
-  display: flex;
+/* Parent Navigation */
+#home_nav_holder{
+  height: 100dvh; /* Translates to vh when unsupported, else allows responsiveness to phone dynamic search/navigation bar */
+
+  display: flex; /* Center elements */
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column; /* Directs child objects (.home_nav) into vertical arrangement */
 }
 
+/* Inset navigation, two instances */
 .home_nav{
-  height: 50%;
+  height: 50vh; /* Half presence on screen by full width; theoretically could inverse these to 100vh, 50vw */
   width: 100vw;
 
-  background-color: #D5C7BC;
+  background-color: #D5C7BC; /* Cream to Off-White | Future Reference, intend to replace w/ high sepia illustration of location as present in several other school media */
 
-  color: white;
+  color: #C52233; /* Backup color in event of interaction breaking, preserves initial color minus interactions thereafter */
   font-weight: bold;
   font-family: sans-serif;
-  font-size: min(8vw, 4em);
+  font-size: min(8vw, 4em); /* Font scaling (conf. I do not fully understand, only that it works enough) to establish a responsive scaling header text with bounds to preserve comprehensibility. */
 
-  display: flex;
+  display: flex; /* Center text within block */
   align-items: center;
   justify-content: center;
+
+  box-shadow: 0 0 0 5px inset #D5C7BC, 0 0 0 10px inset #C52233; /* Double outline for blocks, fourth number assigns outward spread from center of element */
 }
 
-#home_nav_logo{
-  position: absolute;
-
-  height:275px;
-  width:275px;
-
-  background-color: white;
-  border-radius: 50%;
-
-  box-shadow: 0 0 0 5px #D5C7BC, 0 0 0 10px #C52233;
-  border: 5px solid #C52233;
-}
-
-.text_outset{
-  vertical-align: max(-23px, -2.5vmin);
-  font-size: 2em;
-}
+/* Entire text within .home_nav, effecting both subclasses text_outset and text_inset */
 .text_bracket{
-  /*font-variant: small-caps;*/
+  color: transparent; /* Show through text (cutout) in towards assigned background image */
+
+  background-image: linear-gradient(90deg, white 50%, #C52233 50%); /* Block of color containing both white and assigned value red */
+  background-position:100%; /* Initial position of color block relative to viewport, ergo text appears a.v. red to start */
+  background-size:200% 100%; /* Ensures color block size responsivity such that transition functions regardless of viewport size */
+
+  background-clip:text; /* Ensures that the only trait impacted by color block IS text - otherwise would result solid-colored block of a.v. red and white */
+  -webkit-background-clip:text;
+
+  transition: background-position 1s ease, .7s; /* Extend transition for background shift relative towards all other css changes */
+  padding: 20px 30px; /* Oblong selection area beyond text scale itself in which selection and navigation occur as expected | h by w */
+  user-select: none; /* Prevent user highlighting of text header elements */
 }
+
+/* Entire text interactivity conditions, dually when text is hovered and clicked; The latter condition allows efficacy in mobile environments where :hover is not recognized */
+.text_bracket:hover, .text_bracket:active{
+  background-position:0; /* Change position of color block so that text color changes in a line across the text */
+
+  transform: scale(105%); /* Minor size increase to catch attention and demonstrate interaction */
+  transition: .7s;
+}
+
+/* Larger, outset letters in each heading block */
+.text_outset{
+  vertical-align: max(-23px, -2.5vmin); /* Align position relative to line established by inset. Some inefficacy yet largely remains centered, as anticipated */
+  font-size: 2em; /* Double font size relative to established value */
+}
+
+/* Smaller, inset letters in each heading block */
 .text_inset{
-  border-top: 2px solid #C52233;
+  border-top: 2px solid #C52233; /* Framing for inner text to increase visual presence while retaining distinction from outset elements */
   border-bottom: 2px solid #C52233;
 }
-/*#6B0F1A*/
 
-#home_nav_one{
-  color: #C52233;
-  box-shadow: 5px 5px inset #D5C7BC, -5px -5px inset #D5C7BC, 10px 10px inset #C52233, -10px -10px inset #C52233;
-}
-#home_nav_two{
-  color: #C52233;
-  box-shadow: 5px 5px inset #D5C7BC, -5px -5px inset #D5C7BC, 10px 10px inset #C52233, -10px -10px inset #C52233;
+/* Circular logo holder element centered relative to the screen */
+#home_nav_logo{
+  position: absolute; /* Show above .home_nav and prevent offsetting either thereof */
+
+  height: min(25vh, 17rem); /* Logo holder height will be no less than 25% of viewport, yet can increase in accordance with viewport scale | WIll be 17rem until said value < 25vh, whereupon def. to 25vh */
+  aspect-ratio: 1/1; /* Logo holder width will at all times be equal to that of the height */
+
+  background-image: url("images/nav_crest.jpg"); /* Place school crest as image in holder element */
+  background-color: white; /* Backup color assignment should image or assoc. file path fail */
+  background-position: center; /* Center image relative to container */
+  background-size: contain; /* Scale image relative to container */
+  background-repeat: no-repeat; /* Ensure only one instance of crest image is present at any given time, prevent tiling of image */
+
+  border-radius: 50%; /* Round space */
+
+  box-shadow: 0 0 0 5px #D5C7BC, 0 0 0 10px #C52233; /* Double border overlays that of the two .home_nav borders to present continuous flow from flat into round border */
+  border: 5px solid #C52233;
 }

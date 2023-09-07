@@ -11,22 +11,34 @@
 
 
   <body>
-    <nav id="home_nav_holder">
-      <div class="home_nav" id="home_nav_one">
+    <nav id="home_nav_holder"> <!-- Outermost functional holder -->
 
-        <div class="text_bracket"> <span class="text_outset">J</span><span class="text_inset">OURNALIS</span><span class="text_outset">M</span> </div>
+        <div class="home_nav"> <!-- Child level one, ensure arrangement over half of screen in selected orientation -->
 
-      </div>
+          <a href="journalism_alt.html"> <!-- Link functionality to surround interior text -->
+            <div class="text_bracket"> <!-- Outermost text level; holds two layers together in line, allowing vert-align usage more conveniently -->
+              <span class="text_outset">J</span> <!-- Outer letter of header word, vertically aligned with interior letters via vert-align css -->
+              <span class="text_inset">OURNALIS</span> <!-- Interior letters of header word, with coordinated border to emphasize visually -->
+              <span class="text_outset">M</span> <!-- Outer -->
+            </div>
+          </a>
 
-      <div id="home_nav_logo">
-        
-      </div>
+        </div>
 
-      <div class="home_nav" id="home_nav_two">
+        <div id="home_nav_logo"></div> <!-- Rounded and centered logo holder element, centered relative to the page -->
 
-        <div class="text_bracket"> <span class="text_outset">Y</span><span class="text_inset">EARBOO</span><span class="text_outset">K</span> </div>
+        <div class="home_nav"> <!-- Child level one -->
 
-      </div>
+          <a href="yearbook_alt.html">
+            <div class="text_bracket"> <!-- Outermost text level -->
+              <span class="text_outset">Y</span> <!-- Outer -->
+              <span class="text_inset">EARBOO</span> <!-- Interior -->
+              <span class="text_outset">K</span> <!-- Outer -->
+            </div>
+          </a>
+
+        </div>
+
     </nav>
   </body>
 
