@@ -1,5 +1,7 @@
 body{
   margin: 0; /* Remove outlines */
+  background-color: #D5C7BC;
+  overflow-x: hidden;
 }
 a { /* Allow links (esp in index) to preserve native class and/or id styling in favor of defaults | Ref "V Ovchinnikov" and "Frxstrem" on stackoverflow; Posted Jan 19 2012, Edited Nay 1 2018, Read September 7 2023 */
   color: inherit;
@@ -63,7 +65,7 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
 
 /* Larger, outset letters in each heading block */
 .text_outset{
-  vertical-align: max(-23px, -2.5vmin); /* Align position relative to line established by inset. Some inefficacy yet largely remains centered, as anticipated */
+  vertical-align: middle; /* Align position relative to line established by inset. Alternate to max(-23px, -2.5vmin) */
   font-size: 2em; /* Double font size relative to established value */
 }
 
@@ -73,11 +75,8 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
   border-bottom: 2px solid #C52233;
 }
 
-/* Circular logo holder element centered relative to the screen */
-#home_nav_logo{
-  position: absolute; /* Show above .home_nav and prevent offsetting either thereof */
-
-  height: min(25vh, 17rem); /* Logo holder height will be no less than 25% of viewport, yet can increase in accordance with viewport scale | WIll be 17rem until said value < 25vh, whereupon def. to 25vh */
+/* Circular logo holder element. generic condition*/
+.nav_logo{
   aspect-ratio: 1/1; /* Logo holder width will at all times be equal to that of the height */
 
   background-image: url("images/nav_crest.jpg"); /* Place school crest as image in holder element */
@@ -90,4 +89,170 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
 
   box-shadow: 0 0 0 5px #D5C7BC, 0 0 0 10px #C52233; /* Double border overlays that of the two .home_nav borders to present continuous flow from flat into round border */
   border: 5px solid #C52233;
+}
+
+/* Spec. of previous, scale modif. for particular usage */
+.home.nav_logo{
+  position: absolute; /* Show above .home_nav and prevent offsetting either thereof */
+  height: min(25vh, 17rem); /* Logo holder height will be no less than 25% of viewport, yet can increase in accordance with viewport scale | WIll be 17rem until said value < 25vh, whereupon def. to 25vh */
+}
+
+/* SECTION HEADERS */
+
+/* Outer wrapper for hero section */
+.page_dir{
+  display: flex; /* Center relative to viewport */
+  justify-content: center;
+  align-items: center;
+
+  transition: 1s;
+
+  position: absolute; /* Occupy entire viewport over, not above, later elements */
+  width: 100%;
+
+  z-index: 6;
+}
+
+ /* Applied via JS when viewport is at the top of page */
+.page_top{
+  background-color: #D5C7BC;
+  height: 100vh;  /* Occupy entire screen height */
+  box-shadow: 0 0 0 5px inset #D5C7BC, 0 0 0 10px inset #C52233;  /* Border inset around full screen */
+}
+
+/* Applied via JS when viewport is anywhere but the top of page */
+.page_scroll{
+  margin-top: 7vh;  /* Prevent overlap from logo crest over top of viewport */ /* Moved to .page_scroll from .page_dir to restrict presence rel to scroll condition */
+  position: fixed;  /* Rather than sticky, as other causes stuttering when scrolling off / on */
+  height: 10vh;  /* Occupies 10% of screen height on any particular viewport height */
+}
+
+/* Positions logo crest relative to title, scales relative to scroll condition to facilitate use across platforms */
+.site.nav_logo{
+  height: min(20vh, 17rem); /* Somewhat arcane scale variability. Works well enough at present */
+  transition: 1s;
+}
+
+ /* Changes thereto when at .page_top */
+.page_top.page_dir .site.nav_logo{
+  transform: scale(125%); /* Magnify scale of logo image when viewport is at the top of the page */
+  position: absolute;  /* Position behind and to the center by placing absolute, thus effected by parent element flex properties */
+}
+
+ /* Changes thereto when at .page_scroll */
+.page_scroll.page_dir .site.nav_logo{
+  z-index: 4;  /* Bring back above text header to show crest */
+  margin: 0 -5vw 0 0;  /* Reverse margin to hold crest towards right over the leftmost point of the skewed object */
+}
+
+ /* Outer text holder element */
+.dir_title_outer{
+  transform: skewX(-45deg);  /* Offset block 45 degrees right to impart accent curve */
+
+  background-color: #D5C7BC;;
+  height: 10vh;  /* Occupy 10% of viewport height and 50% of viewport width */
+  width: 50vw;
+  box-shadow: 0 0 0 5px #D5C7BC, 0 0 0 10px #C52233;  /* Double external borders relative to innermost border element */
+  border: 5px solid #C52233;
+
+  display: flex;  /* Center text elements relative to the center of 10vh by 50vw as desc. above */
+  justify-content: center;
+  align-items: center;
+
+  z-index: 3;  /* Position above lower element and relative to the crest element as it changes position */
+}
+
+ /* Changes thereto when at .page_top */
+.page_top.page_dir .dir_title_outer{
+  transform: skewX(-40deg) scaleY(125%) scaleX(105%);  /* Reduce skew and increase scale to give accent when element is in focus */
+  padding: 5px 0 5px 0;
+}
+
+ /* Both build accent dot to one side of principle header */
+.dir_title_outer::before{
+  height: 1.5vw;  /* Establish height of element reltive to viewport width */
+  aspect-ratio: 1/1;  /* Ensure that width is alwaus equal to height */
+  vertical-align: top;  /* Align element relative to the top of the line */
+  background-color: #C52233;
+  display: inline-block;
+  content: '';  /* Ensure that the element does not hold any characters/etc. */
+  transform: skewX(45deg);  /* Reverse skew from parent to preserve shape */
+  margin: 0 15px 0 15px;  /* Offset from surrounding text */
+  border-radius: 50%;  /* Translate to circle */
+}
+.dir_title_outer::after{  /* There should be and probably is a way to do this in a single rule. I don't know that way */
+  height: 1.5vw;
+  aspect-ratio: 1/1;
+  vertical-align: top;
+  background-color: #C52233;
+  display: inline-block;
+  content: '';
+  transform: skewX(45deg);
+  margin: 0 15px 0 15px;
+  border-radius: 50%;
+}
+
+ /* Inner text holder element */
+.dir_title_inner{
+  transform: skewX(45deg);  /* Reverse skew relative to parent to preserve legibility of characters */
+
+  color: #C52233;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: min(4vw, 4em);  /* Allow dynamic resizing of characters relative to viewport within set bounds */
+}
+
+ /* Footer element to the hero section, directs readers to scroll */
+.dir_dir{
+  position: absolute;  /* Position independent of other elements on page */
+  bottom: 40px;  /* Establish distance between element and bottom of viewport */
+
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 2.2em; /* Emphasize font size to 2.2 times default */
+  color: #C52233;
+
+  z-index: 6;
+  transition: 1s; /* ALl changes to class occur over one second */
+}
+
+.page_scroll.page_dir .dir_dir{
+  z-index: 1; /* Reduce z-axis height for element when in .page_scroll so that it falls underneath the reduced size of .page_dir rather than sitting above it */
+}
+
+/* SECTION PAGES */
+
+/* Ensure that text appears appropriately below smaller title bar on page_scroll */
+.spacer{
+  height: 18.5vh; /* Height matches to space occupied thereby */
+  position: sticky; /* Persist at top of page */
+  z-index: 0; /* Exist below all positioned elements yet nonetheless above all non-positioned elements (ergo, text) */
+  top: 0; /* Exist at the exact top of the viewport */
+  background-color: #D5C7BC; /* Blend with background */
+  margin-bottom: 17vh; /* Effectively give text space to appear without being scrolled over on initial transition to page_scroll */
+}
+
+/* Outer wrap for main body text */
+.main_outer{
+  min-height:200vh; /* Temporary measure until site exceeds 200vh, ensures ability to scroll */
+  width: 100vw; /* Wrapper occupies entirety of viewport width */
+  /* text-align: center; */ /* Consideration / Alternate */
+  visibility: hidden; /* Prevent showing above elements in .page_top */
+
+  display: flex; /* Center .main_inner relative to the viewport to asllow more convenient measured positioning thereof */
+  justify-content: center;
+}
+
+/* Inner block for main body tet */
+.main_inner{
+  width: 40vw; /* Text area occupies 40% of given viewport */
+  padding: 2vh 5vw 0 2vw;
+  border-left: 5px solid #C52233; /* Off-centered bordering + corresponding margin allows accented position relative to header */
+  margin-left: 8vw;
+  box-shadow: -5px 0 0 0 #D5C7BC, -10px 0 0 0 #C52233;
+}
+
+.page_scroll.page_dir ~ .main_outer{ /* Element .main is a sibling of element .page_scroll.page_dir, and its style is impacted by the configuration of its sibling */
+  visibility: visible;
+  transition: 5s;
 }
