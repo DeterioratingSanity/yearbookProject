@@ -1,6 +1,6 @@
 body{
   margin: 0; /* Remove outlines */
-  background-color: #D5C7BC;
+  background-color:#E9E0D7; /* lighter alt of #D5C7BC */
   overflow-x: hidden;
 }
 a { /* Allow links (esp in index) to preserve native class and/or id styling in favor of defaults | Ref "V Ovchinnikov" and "Frxstrem" on stackoverflow; Posted Jan 19 2012, Edited Nay 1 2018, Read September 7 2023 */
@@ -25,7 +25,7 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
   height: 50vh; /* Half presence on screen by full width; theoretically could inverse these to 100vh, 50vw */
   width: 100vw;
 
-  background-color: #D5C7BC; /* Cream to Off-White | Future Reference, intend to replace w/ high sepia illustration of location as present in several other school media */
+  background-color:#E9E0D7; /* Cream to Off-White | Future Reference, intend to replace w/ high sepia illustration of location as present in several other school media */
 
   color: #C52233; /* Backup color in event of interaction breaking, preserves initial color minus interactions thereafter */
   font-weight: bold;
@@ -36,7 +36,7 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
   align-items: center;
   justify-content: center;
 
-  box-shadow: 0 0 0 5px inset #D5C7BC, 0 0 0 10px inset #C52233; /* Double outline for blocks, fourth number assigns outward spread from center of element */
+  box-shadow: 0 0 0 5px inset #E9E0D7, 0 0 0 10px inset #C52233; /* Double outline for blocks, fourth number assigns outward spread from center of element */
 }
 
 /* Entire text within .home_nav, effecting both subclasses text_outset and text_inset */
@@ -87,7 +87,7 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
 
   border-radius: 50%; /* Round space */
 
-  box-shadow: 0 0 0 5px #D5C7BC, 0 0 0 10px #C52233; /* Double border overlays that of the two .home_nav borders to present continuous flow from flat into round border */
+  box-shadow: 0 0 0 5px#E9E0D7, 0 0 0 10px #C52233; /* Double border overlays that of the two .home_nav borders to present continuous flow from flat into round border */
   border: 5px solid #C52233;
 }
 
@@ -108,16 +108,16 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
   transition: 1s;
 
   position: absolute; /* Occupy entire viewport over, not above, later elements */
-  width: 100%;
+  width: 100vw;
 
   z-index: 6;
 }
 
  /* Applied via JS when viewport is at the top of page */
 .page_top{
-  background-color: #D5C7BC;
-  height: 100vh;  /* Occupy entire screen height */
-  box-shadow: 0 0 0 5px inset #D5C7BC, 0 0 0 10px inset #C52233;  /* Border inset around full screen */
+  background-color:#E9E0D7;
+  height: 100dvh;  /* Occupy entire screen height */
+  box-shadow: 0 0 0 5px inset#E9E0D7, 0 0 0 10px inset #C52233;  /* Border inset around full screen */
 }
 
 /* Applied via JS when viewport is anywhere but the top of page */
@@ -149,10 +149,10 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
 .dir_title_outer{
   transform: skewX(-45deg);  /* Offset block 45 degrees right to impart accent curve */
 
-  background-color: #D5C7BC;;
+  background-color:#E9E0D7;;
   height: 10vh;  /* Occupy 10% of viewport height and 50% of viewport width */
   width: 50vw;
-  box-shadow: 0 0 0 5px #D5C7BC, 0 0 0 10px #C52233;  /* Double external borders relative to innermost border element */
+  box-shadow: 0 0 0 5px#E9E0D7, 0 0 0 10px #C52233;  /* Double external borders relative to innermost border element */
   border: 5px solid #C52233;
 
   display: flex;  /* Center text elements relative to the center of 10vh by 50vw as desc. above */
@@ -217,7 +217,37 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
 }
 
 .page_scroll.page_dir .dir_dir{
-  z-index: 1; /* Reduce z-axis height for element when in .page_scroll so that it falls underneath the reduced size of .page_dir rather than sitting above it */
+  font-size: 0; /* Shrink as exiting view */
+  z-index: 0; /* Reduce z-axis height for element when in .page_scroll so that it falls underneath the reduced size of .page_dir rather than sitting above it */
+
+}
+
+/* SVG */
+
+#scroll_svg{
+  position: sticky;
+  top: 23vh;
+  left: clamp(0px, 18.5vw, 500px);
+  width: max(35px, 3vw);
+  height: auto;
+  overflow: visible;
+}
+#scroll_svg_pos{
+  fill: #C52233;
+}
+#scroll_svg_path{
+  fill: none;
+  stroke-dashoffset: 3px;
+  stroke: #C52233;
+  stroke-width: 10;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 20;
+}
+#scroll_svg_text{
+  font-size: 2em;
+  font-family: sans-serif;
+  font-weight: bold;
+  filter: drop-shadow(2px 2px #C52233);
 }
 
 /* SECTION PAGES */
@@ -228,7 +258,7 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
   position: sticky; /* Persist at top of page */
   z-index: 0; /* Exist below all positioned elements yet nonetheless above all non-positioned elements (ergo, text) */
   top: 0; /* Exist at the exact top of the viewport */
-  background-color: #D5C7BC; /* Blend with background */
+  background-color:#E9E0D7; /* Blend with background */
   margin-bottom: 17vh; /* Effectively give text space to appear without being scrolled over on initial transition to page_scroll */
 }
 
@@ -246,10 +276,11 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
 /* Inner block for main body tet */
 .main_inner{
   width: 40vw; /* Text area occupies 40% of given viewport */
-  padding: 2vh 5vw 0 2vw;
+  padding: 5vh 5vw 0 max(2vw, 38.4px);
   border-left: 5px solid #C52233; /* Off-centered bordering + corresponding margin allows accented position relative to header */
   margin-left: 8vw;
-  box-shadow: -5px 0 0 0 #D5C7BC, -10px 0 0 0 #C52233;
+  box-shadow: -5px 0 0 0#E9E0D7, -10px 0 0 0 #C52233;
+  margin-top: -50px;
 }
 
 .page_scroll.page_dir ~ .main_outer{ /* Element .main is a sibling of element .page_scroll.page_dir, and its style is impacted by the configuration of its sibling */

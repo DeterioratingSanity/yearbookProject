@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="style_alt.css">
   </head>
 
-  <body>
-
+  <body onload="scrollOperator()">
     <div id="hero" class="page_dir page_top"> <!-- page_top transitions to page_scroll on scroll, alt. hero condition onload vs at other screen heights -->
 
       <div class="site nav_logo"></div> <!-- Logo + assoc. outlines -->
@@ -27,17 +26,40 @@
 
     </div>
 
+
     <div class="spacer"> <!-- Spacer -->
     </div>
 
-    <div class="main_outer"> <!-- Second layer req. to allow display: flex to behave as anticipated -->
-      <div class="main_inner">
-        a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+    <svg id="scroll_svg" width="100%" viewBox="0 0 60 55" preserveAspectRatio="xMidYMin slice">
+            <!--<circle fill="white" cx="175" cy="100" r="85"/>-->
+            <circle fill="#C52233" cx="100" cy="100" r="5"/>
 
+            <circle id="scroll_svg_pos" cx="15" cy="15" r="10"/>
+            <path id="scroll_svg_path" class="st0" stroke-dasharray="10,9" d="
+                           M 100, 100
+                           C 102 5 243 -5 250 100
+                           C 248 195 105 203 100 100"
+                           />
+            Sorry, your browser does not support inline SVG.
+            <text id="scroll_svg_text" x="174" y="110" fill='white'> 0% </text>
+          </svg>
+
+
+    <div class="main_outer"  > <!-- Second layer req. to allow display: flex to behave as anticipated -->
+      <div class="main_inner" id="textMain">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc sed id semper risus in. Eget mauris pharetra et ultrices neque ornare. Donec ac odio tempor orci dapibus ultrices in. A lacus vestibulum sed arcu non odio euismod lacinia at. Velit aliquet sagittis id consectetur purus ut faucibus. Diam sollicitudin tempor id eu nisl nunc mi ipsum. Aliquet enim tortor at auctor urna nunc. Est ullamcorper eget nulla facilisi etiam dignissim diam. Auctor eu augue ut lectus arcu bibendum at varius. Neque gravida in fermentum et sollicitudin ac orci phasellus. Purus viverra accumsan in nisl nisi scelerisque. Non sodales neque sodales ut etiam. Tempor nec feugiat nisl pretium fusce.
+        <br><br>
+        Sed euismod nisi porta lorem mollis aliquam. Suspendisse faucibus interdum posuere lorem ipsum dolor sit amet consectetur. Facilisis magna etiam tempor orci eu lobortis elementum. A arcu cursus vitae congue mauris rhoncus aenean vel. Lectus sit amet est placerat in egestas erat imperdiet. Posuere lorem ipsum dolor sit amet consectetur adipiscing elit duis. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Pharetra massa massa ultricies mi quis hendrerit. Morbi quis commodo odio aenean sed adipiscing. Ipsum dolor sit amet consectetur adipiscing. Et ultrices neque ornare aenean euismod elementum. At urna condimentum mattis pellentesque id.
+        <br><br>
+        Est ultricies integer quis auctor elit sed vulputate mi. Velit ut tortor pretium viverra suspendisse potenti. Tincidunt dui ut ornare lectus sit amet est placerat in. Condimentum vitae sapien pellentesque habitant morbi. Pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies. Tristique senectus et netus et malesuada fames ac turpis. Maecenas ultricies mi eget mauris pharetra et. Pulvinar neque laoreet suspendisse interdum consectetur libero. In fermentum posuere urna nec tincidunt praesent semper feugiat. Mattis enim ut tellus elementum sagittis vitae et leo duis. Pulvinar mattis nunc sed blandit libero. In ornare quam viverra orci sagittis. Eu mi bibendum neque egestas. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique.
+        <br><br>
+        Risus nullam eget felis eget. Etiam sit amet nisl purus in mollis. Fusce ut placerat orci nulla pellentesque dignissim enim sit. Ornare suspendisse sed nisi lacus sed viverra. Pharetra diam sit amet nisl suscipit adipiscing. Turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Amet mauris commodo quis imperdiet massa. Aliquet porttitor lacus luctus accumsan tortor. Nam at lectus urna duis. Cursus metus aliquam eleifend mi in nulla posuere. Pellentesque diam volutpat commodo sed. Enim ut tellus elementum sagittis vitae et leo. Hendrerit dolor magna eget est lorem ipsum dolor sit.
+        <br><br>
+        Elementum sagittis vitae et leo duis ut diam quam nulla. Suspendisse in est ante in nibh mauris cursus. Vulputate eu scelerisque felis imperdiet proin fermentum leo. Elit pellentesque habitant morbi tristique senectus et. Ut porttitor leo a diam sollicitudin. Tellus elementum sagittis vitae et leo duis ut diam. Posuere ac ut consequat semper. Sed pulvinar proin gravida hendrerit lectus. Mauris cursus mattis molestie a iaculis at erat. Nam at lectus urna duis convallis convallis tellus. Nibh tortor id aliquet lectus proin nibh. Phasellus faucibus scelerisque eleifend donec pretium vulputate. Eget nunc scelerisque viverra mauris. Diam quam nulla porttitor massa id neque aliquam vestibulum morbi. Tristique senectus et netus et. Et netus et malesuada fames ac turpis egestas sed tempus.
       </div>
     </div>
 
-    <script src="script_alt.js"></script>
+    <script src="script_alt.js"></script> <!-- Fit both, independent operations into one event listener (a bit by accident) - Less checking should help efficiency -->
 
   </body>
 
