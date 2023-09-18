@@ -4,13 +4,15 @@ function scrollOperator() {
   headerSwitch();
   scrollProgression();
 
-//
-//  var width = window.innerWidth;
-//  var offset = document.getElementById("textMain").offsetWidth;
-//
-//  document.getElementById("scroll_svg").style.marginLeft = (width - offset) / 2.8;
-//
-//  console.log(document.getElementById("textMain").offsetWidth);
+  var width = window.innerWidth;
+  var offset = document.getElementById("textMain").offsetWidth;
+
+  document.getElementById("scroll_svg").style.right += offset * (1.18 + (offset / width));  //offset * 1.65 // Maybe can become more smart (1.65)
+
+  console.log((1 + (offset / (width / 1.4))));
+  // divide something to determine what percent of the width is occupied by the offset, add to one?
+
+  // console.log(document.getElementById("textMain").offsetWidth);
 }
 
 // Pulled pretty thoroughly from portfolio project; appended to "> 1" and in css shifted from sticky to fixed to allow better resizing without screen stutter.

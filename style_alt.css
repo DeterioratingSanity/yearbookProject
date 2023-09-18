@@ -108,7 +108,7 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
   transition: 1s;
 
   position: absolute; /* Occupy entire viewport over, not above, later elements */
-  width: 100vw;
+  width: 100%;
 
   z-index: 6;
 }
@@ -225,10 +225,10 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
 /* SVG */
 
 #scroll_svg{
-  position: sticky;
+  position: fixed;
   top: 23vh;
-  left: clamp(0px, 18.5vw, 500px);
-  width: max(35px, 3vw);
+  right: 15vw;
+  width: max(35px, 3vw); /* max(35px, 3vw) -- find a way to unscrew it */
   height: auto;
   overflow: visible;
 }
@@ -239,7 +239,7 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
   fill: none;
   stroke-dashoffset: 3px;
   stroke: #C52233;
-  stroke-width: 10;
+  stroke-width: 5;
   stroke-miterlimit: 10;
   stroke-dasharray: 20;
 }
