@@ -30,19 +30,34 @@
     <div class="spacer"> <!-- Spacer -->
     </div>
 
+    <!-- Main SVG element, general positioning -->
     <svg id="scroll_svg" viewBox="0 0 60 55" preserveAspectRatio="xMidYMin slice">
-            <circle fill="#C52233" cx="175" cy="100" r="87"/>
-            <circle fill="#E9E0D7" cx="175" cy="100" r="82"/>
-            <circle fill="#C52233" cx="100" cy="100" r="2.5"/>
 
-            <circle id="scroll_svg_pos" cx="15" cy="15" r="5"/>
-            <path id="scroll_svg_path" class="st0" stroke-dasharray="10,9" d="
-                           M 100, 100
-                           C 102 5 243 -5 250 100
-                           C 248 195 105 203 100 100"
-                           />
+            <!-- Outer circle to outline the progress circle; Concat of two circles via stroke and stroke-width -->
+            <circle class="scroll_wrap" stroke-width="5"  cx="175" cy="100" r="87"/>
+
+            <!-- Round endcap on progress-fill path, rounds the end thereof -->
+            <circle class="scroll_main" cx="100" cy="100" r="2.5"/>
+
+            <!-- Wider position-indicator that sits on current end of progress-fill path -->
+            <circle id="scroll_svg_pos" class="scroll_main" cx="15" cy="15" r="5"/>
+
+            <!-- Progress-fill path src. sabithpocker @ https://stackoverflow.com/questions/45506520/animate-a-circle-with-the-growth-of-path-on-scroll
+                 Starting at point 100-100, draw a curve around to 250-100 (up before down, left to right) and another curve back to 100-100 (down before up, right to left)
+                 Disclaimer: SVG paths are a bit wacky to make. If you zoom in far enough, it may not be a perfect circle. -->
+            <path id="scroll_svg_path" class="st0" stroke-dasharray="10,9" d="M 100, 100 C 102 5 243 -5 250 100 C 248 195 105 203 100 100" />
+
+            <!-- Offer as exception if someone is on a browser which does not support inline svg (Only in v. v. old browsers per caniuse) -->
             Sorry, your browser does not support inline SVG.
+
+            <!-- Centered text progression indicator within progress-fill path -->
             <text id="scroll_svg_text" x="174" y="110" fill='white'> 0% </text>
+
+            <!-- Holder idea for Social Media links below - Circles holding icons or links to Table of Contents? -->
+
+            <!--  Module Wrapper
+                  <circle class="scroll_wrap" cx="175" cy="270" r="60"/>
+            -->
     </svg>
 
     <div class="main_outer"  > <!-- Second layer req. to allow display: flex to behave as anticipated -->
@@ -57,6 +72,10 @@
         <br><br>
         Elementum sagittis vitae et leo duis ut diam quam nulla. Suspendisse in est ante in nibh mauris cursus. Vulputate eu scelerisque felis imperdiet proin fermentum leo. Elit pellentesque habitant morbi tristique senectus et. Ut porttitor leo a diam sollicitudin. Tellus elementum sagittis vitae et leo duis ut diam. Posuere ac ut consequat semper. Sed pulvinar proin gravida hendrerit lectus. Mauris cursus mattis molestie a iaculis at erat. Nam at lectus urna duis convallis convallis tellus. Nibh tortor id aliquet lectus proin nibh. Phasellus faucibus scelerisque eleifend donec pretium vulputate. Eget nunc scelerisque viverra mauris. Diam quam nulla porttitor massa id neque aliquam vestibulum morbi. Tristique senectus et netus et. Et netus et malesuada fames ac turpis egestas sed tempus.
       </div>
+    </div>
+
+    <div id="foot_outer">
+        <div id="foot_inner"></div>
     </div>
 
     <script src="script_alt.js"></script> <!-- Fit both, independent operations into one event listener (a bit by accident) - Less checking should help efficiency -->

@@ -97,6 +97,7 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
   height: min(25vh, 17rem); /* Logo holder height will be no less than 25% of viewport, yet can increase in accordance with viewport scale | WIll be 17rem until said value < 25vh, whereupon def. to 25vh */
 }
 
+
 /* SECTION HEADERS */
 
 /* Outer wrapper for hero section */
@@ -222,19 +223,56 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
 
 }
 
-/* SVG */
 
+/* SECTION FOOTERS */
+
+.page_top.page_dir ~ #foot_outer{
+  transition: 0.5s;
+  bottom: -5vh;
+}
+.page_scroll.page_dir ~ #foot_outer{
+  transition: 0.5s;
+  bottom: 4vh;
+}
+#foot_outer{
+  transform: skewX(-45deg);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  position:sticky;
+  height: 3vh;
+}
+
+#foot_inner{
+  box-shadow: 0 0 0 5px #E9E0D7, 0 0 0 10px #C52233, 0 45px 0 50px #E9E0D7;
+  width:45vw;
+  padding-right: 10vw;
+  background-color:#E9E0D7;
+  border: 5px solid #C52233;
+  /*border-bottom: none;*/
+}
+
+
+/* SVG STYLING */
+/* Scroll Progression Indication - Round inset below logo round, positioned rel. thereto */
+
+/* Style for svg holder element when at .page_top */
+.page_top.page_dir ~ #scroll_svg{
+  opacity: 0; /* What prop. to change? -- Perh. width; (height doesnot work) -- Dec. Opacity. Preserves init fade-out with better speed */
+  transition: 0.3s; /* ~ Transition out faster than transition in */
+}
+
+/* Style for outermost svg holder */
 #scroll_svg{
-  position: fixed;
-  top: 23vh;
-  right: 15vw;
+  position: fixed; /* Preserve element location relative to viewport */
+  top: 23vh; /* Position top approx. 1/4 down the page */
+  right: 15vw; /* Initialize right approx 1/7 across page - Basepoint for JS styling */
   width: max(35px, 3vw); /* max(35px, 3vw) -- find a way to unscrew it */
-  height: auto;
-  overflow: visible;
+  height: auto; /* Make height the "default" that this element wants to occupy */
+  overflow: visible; /* Make portions which extend beyond the width and height remain visible */
+  transition: 0.5s; /* ~ Transition In slower than transition out */
 }
-#scroll_svg_pos{
-  fill: #C52233;
-}
+
 #scroll_svg_path{
   fill: none;
   stroke-dashoffset: 3px;
@@ -249,6 +287,17 @@ a { /* Allow links (esp in index) to preserve native class and/or id styling in 
   font-weight: bold;
   filter: drop-shadow(2px 2px #C52233);
 }
+
+/* SVG color condition for main color */
+.scroll_wrap{
+  stroke: #C52233;
+  fill: #E9E0D7;
+  stroke-width: 5;
+}
+.scroll_main{
+  fill:#C52233;
+}
+
 
 /* SECTION PAGES */
 

@@ -9,7 +9,7 @@ function scrollOperator() {
 
   document.getElementById("scroll_svg").style.right += offset * (1.18 + (offset / width));  //offset * 1.65 // Maybe can become more smart (1.65)
 
-  console.log((1 + (offset / (width / 1.4))));
+  // TESTER || console.log((1 + (offset / (width / 1.4))));
   // divide something to determine what percent of the width is occupied by the offset, add to one?
 
   // console.log(document.getElementById("textMain").offsetWidth);
@@ -42,6 +42,9 @@ line_path.style.strokeDashoffset = line_length;
 
 function scrollProgression() {
   // What % down is it?
+
+  // SET TO MAIN_OUTER PROGRESS?
+
   var scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
   // Length to offset the dashes
   var draw = line_length * scrollpercent;

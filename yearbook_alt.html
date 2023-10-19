@@ -12,7 +12,7 @@
 
   <body onload="scrollOperator()">
 
-    <div id="hero" class="page_dir page_top"> <!-- page_top transit to page_scroll on scroll either w js or gsap -->
+    <div id="hero" class="page_dir page_top"> <!-- page_top transit to page_scroll on scroll  w js  -->
 
       <div class="site nav_logo"></div>
 
@@ -30,19 +30,22 @@
     <div class="spacer"> <!-- Spacer -->
     </div>
 
+    <!-- Main SVG element -->
     <svg id="scroll_svg" viewBox="0 0 60 55" preserveAspectRatio="xMidYMin slice">
-            <circle fill="#C52233" cx="175" cy="100" r="87"/>
-            <circle fill="#E9E0D7" cx="175" cy="100" r="82"/>
-            <circle fill="#C52233" cx="100" cy="100" r="2.5"/>
+            <circle class="scroll_wrap" stroke-width="5"  cx="175" cy="100" r="87"/>
+            <circle class="scroll_main" cx="100" cy="100" r="2.5"/>
+            <circle id="scroll_svg_pos" class="scroll_main" cx="15" cy="15" r="5"/>
+            <path id="scroll_svg_path" class="st0" stroke-dasharray="10,9" d="M 100, 100 C 102 5 243 -5 250 100 C 248 195 105 203 100 100" />
 
-            <circle id="scroll_svg_pos" cx="15" cy="15" r="5"/>
-            <path id="scroll_svg_path" class="st0" stroke-dasharray="10,9" d="
-                           M 100, 100
-                           C 102 5 243 -5 250 100
-                           C 248 195 105 203 100 100"
-                           />
             Sorry, your browser does not support inline SVG.
+
             <text id="scroll_svg_text" x="174" y="110" fill='white'> 0% </text>
+
+            <!-- Holder idea for Social Media links below - Circles holding icons or links to Table of Contents? -->
+
+            <!--  Module Wrapper
+                  <circle class="scroll_wrap" cx="175" cy="270" r="60"/>
+            -->
     </svg>
 
     <div class="main_outer">
@@ -59,6 +62,9 @@
       </div>
     </div>
 
+    <div id="foot_outer">
+        <div id="foot_inner"></div>
+    </div>
 
     <script src="script_alt.js"></script>
 
