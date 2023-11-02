@@ -26,13 +26,23 @@
       }
       .item{
         background-color: red;
-        border-radius: 1.5em;
+        border-radius: 0.5em;
         height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-family: sans-serif;
+        color: white;
+        font-size: 3em;
+        padding: 20px 25px;
       }
 
-      @media screen and (min-width: 800px){
+      @media screen and (min-width: 840px){
         #grid-temp{
           grid-template-columns:  25% 25% 25% 25%;
+        }
+        .item{
         }
         .item1{
           grid-row: 1 / span 2;
@@ -49,14 +59,19 @@
   <body>
       <div id="grid-temp">
         <div class="item item1">
+          TEMP
         </div>
         <div class="item item2">
+          TEMP
         </div>
         <div class="item">
+          TEMP
         </div>
         <div class="item">
+          TEMP
         </div>
         <div class="item item5">
+          TEMP
         </div>
       </div>
   </body>
